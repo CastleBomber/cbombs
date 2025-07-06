@@ -5,5 +5,7 @@ Solution:
 git pull origin main --no-rebase
 
 
+# Tree command to go 3 levels of subfolders deep
+tree -d -L 3
 
 

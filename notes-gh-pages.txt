@@ -1,0 +1,24 @@
+GitHub Pages Settings (Javascript implementation):
+Go to your repo → Settings → Pages
+Confirm:
+Source: Deploy from a branch
+Branch: gh-pages (not main or docs)
+Custom domain: www.cbombs.com (should show "DNS check successful")
+
+CNAME File: **
+185.199.110.153
+185.199.109.153
+185.199.111.153
+185.199.108.153
+
+Ensure public/CNAME exists with exactly:
+www.cbombs.com
+
+
+# Working on project
+npm run build && npm run deploy
+(Only pushes the production-ready build/ folder to the gh-pages branch
+Updates your live website (GitHub Pages)
+Does not save your source code changes to GitHub)
+
+
