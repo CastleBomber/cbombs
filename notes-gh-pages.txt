@@ -20,5 +20,3 @@ npm run build && npm run deploy
 (Only pushes the production-ready build/ folder to the gh-pages branch
 Updates your live website (GitHub Pages)
 Does not save your source code changes to GitHub)
-
-
