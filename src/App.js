@@ -1,12 +1,18 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Crypto from './pages/Crypto';
+import Animations from './pages/Animations';
+import Capstone from './pages/Capstone';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#">Welcome</Navbar.Brand>
+          <Navbar.Brand href="#">Welcome, *site under construction*</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -19,7 +25,12 @@ function App() {
       </Navbar>
 
       <Container className="my-5">
-        {/* Your content here */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/crypto" element={<Crypto />} />
+          <Route path="/animations" element={<Animations />} />
+          <Route path="/capstone" element={<Capstone />} />
+        </Routes>
       </Container>
     </>
   );
