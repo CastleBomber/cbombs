@@ -1,15 +1,14 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Crypto from './pages/Crypto';
 import Animations from './pages/Animations';
 import Capstone from './pages/Capstone';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#">Welcome, *site under construction*</Navbar.Brand>
@@ -32,7 +31,7 @@ function App() {
           <Route path="/capstone" element={<Capstone />} />
         </Routes>
       </Container>
-    </>
+    </ BrowserRouter>
   );
 }
 export default App;
