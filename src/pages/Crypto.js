@@ -1,5 +1,3 @@
-import NavigationBar from "../components/NavBar";
-
 export default function Crypto() {
     return (
         <div>
