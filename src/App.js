@@ -9,8 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <div>
+      
+      <div className="app-container">
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/crypto" element={<Crypto />} />
