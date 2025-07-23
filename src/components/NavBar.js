@@ -1,11 +1,17 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import profileImg from '../images/r13-transparent.png';
 
 const NavBar = () => {
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
+        <img 
+          src={profileImg}
+          alt="Profile"
+          className="navbar-profile-img"
+        />
         <Navbar.Brand as={Link} to="/">CBOMBS</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

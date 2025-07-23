@@ -1,60 +1,25 @@
-/* * {
+/* ===== GLOBAL STYLES ===== */
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-} */
+}
 
-html, body, .app-container {
-  height: 100%;
+html,
+body,
+.app-container {
+  min-height: 100vh;
   background-color: #1e1e2f;
   font-family: Georgia;
-}
-
-p {
   color: white;
-  text-align: center;
 }
 
-nav {
-  grid-area: nav;
-}
-
-header {
-  grid-area: header;
-}
-
-main {
-  grid-area: main;
-}
-
-article {
-  grid-area: article;
-}
-
-/* Home Page */
-.page-home {
-  display: grid;
-
-  grid-template-areas:
-    "header header header"
-    "main main main"
-    "footer footer footer";
-
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-
-  width: 100vw;
-  height: 100vh;
-
-  max-width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: auto;
-  margin-left: auto; 
-}
-
-/* Crytpo Page */
-.page-crypto {
+/* ===== LAYOUT STRUCTURE ===== */
+/* Shared page styles */
+.page-home,
+.page-crypto,
+.page-animations,
+.page-capstone {
   display: grid;
 
   grid-template-areas:
@@ -75,100 +40,55 @@ article {
   margin-left: auto;
 }
 
-/* For all pages */
-.page-home h1, .page-crypto h1 {
-  color: red;
-  font-size: 40px;
-  text-align: center;
-  text-decoration: underline;
-  margin-top: 10px;
-  
-}
-
-.page-home h2, .page-crypto h2 {
-  color: green;
-  font-size: 20px;
-  text-align: center;
-}
-
-.page-home p, .page-crypto p {
+.page-home h1,
+.page-crypto h1 {
   color: white;
   text-align: center;
-  font-size: 16px;
+  text-decoration: underline;
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Animations Page */
-.page-animations {
-  display: grid;
-
-  grid-template-areas:
-    "nav"
-    "main"
-    "footer";
-
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-
-  width: 100vw;
-  height: 100vh;
-
-  max-width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #1e1e2f;
+.page-home h2,
+.page-crypto h2 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Capstone Page */
-.page-capstone {
-  display: grid;
+.page-home p,
+.page-crypto p {
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
 
-  grid-template-areas:
-    "nav"
-    "main"
-    "footer";
+/* Grid areas */
+nav {
+  grid-area: nav;
+}
 
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+header {
+  grid-area: header;
+}
 
-  width: 100vw;
-  height: 100vh;
-
-  max-width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #1e1e2f;
+main {
+  grid-area: main;
 }
 
 footer {
   grid-area: footer;
 }
 
-/* NavBar Component */
-.navbar {
-  max-width: auto;
-
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-right: 0;
-  margin-left: 0;
+article {
+  grid-area: article;
 }
 
-/* Footer Component */
-.footer {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.header-image {
+/* ===== Extra Stuff ===== */
+.crypto-project-image {
   width: 100%;
   max-width: 800px;
   display: block;
@@ -177,27 +97,94 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.article {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .error-message {
   color: #fff;
   text-align: center;
   margin-top: 20px;
 }
 
-/* Article, responsive adjustment for smaller screens */
+.navbar-profile-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.video-container {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+}
+
+.social-footer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #1db954; /* Spotify green - adjust as needed */
+}
+
+.video-container {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Tablet (768px and below) */
 @media (max-width: 768px) {
-  .article {
-    grid-template-columns: repeat(2, 1fr);
+  :root {
+    font-size: 14px;
+  }
+
+  /* Base scaling */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer {
+    padding: 1rem;
   }
 }
 
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
-  .article {
-    grid-template-columns: 1fr;
+  :root {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-decoration: none;
+    /* Cleaner on small screens */
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    /* Stack items tightly */
+  }
+
+  .header-image {
+    margin-bottom: 1rem;
+    /* Reduce image spacing */
   }
 }
