@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.61dcc6dd.css",
-    "main.js": "/static/js/main.ca5b169c.js",
+    "main.js": "/static/js/main.05597893.js",
     "static/js/453.b65bddc3.chunk.js": "/static/js/453.b65bddc3.chunk.js",
     "static/media/crypto-1.jpg": "/static/media/crypto-1.e1462656f635b2146aa3.jpg",
     "static/media/crypto-2.jpg": "/static/media/crypto-2.85b20f4c35250fbe29b4.jpg",
     "static/media/capstone-poster.jpg": "/static/media/capstone-poster.8510d5552628f308386e.jpg",
     "static/media/mongo-db.jpg": "/static/media/mongo-db.c97829efa766c662368e.jpg",
-    "static/media/r13-transparent.png": "/static/media/r13-transparent.5b114d77e70b336bc3c5.png",
+    "static/media/r13-cbombs.png": "/static/media/r13-cbombs.5b114d77e70b336bc3c5.png",
     "index.html": "/index.html",
     "main.61dcc6dd.css.map": "/static/css/main.61dcc6dd.css.map",
-    "main.ca5b169c.js.map": "/static/js/main.ca5b169c.js.map",
+    "main.05597893.js.map": "/static/js/main.05597893.js.map",
     "453.b65bddc3.chunk.js.map": "/static/js/453.b65bddc3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.61dcc6dd.css",
-    "static/js/main.ca5b169c.js"
+    "static/js/main.05597893.js"
   ]
 }
