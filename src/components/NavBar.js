@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import profileImg from '../images/r13-transparent.png';
+import profileImg from '../images/header/r13-cbombs.png';
 
 const NavBar = () => {
 

@@ -38,20 +38,24 @@ body,
   padding-left: 0px;
   margin-right: auto;
   margin-left: auto;
+  overflow-x: hidden;
 }
 
 .page-home h1,
-.page-crypto h1 {
+.page-crypto h1,
+.page-animations h1,
+.page-capstone h1  {
   color: white;
   text-align: center;
-  text-decoration: underline;
   font-size: 3rem;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
 }
 
 .page-home h2,
-.page-crypto h2 {
+.page-crypto h2,
+.page-animations h2,
+.page-capstone h2  {
   color: white;
   text-align: center;
   font-size: 2rem;
@@ -60,7 +64,9 @@ body,
 }
 
 .page-home p,
-.page-crypto p {
+.page-crypto p,
+.page-animations p,
+.page-capstone p  {
   color: white;
   text-align: center;
   font-size: 1rem;
@@ -73,6 +79,8 @@ nav {
 
 header {
   grid-area: header;
+  overflow: hidden;
+  min-height: 80px;
 }
 
 main {
@@ -88,7 +96,8 @@ article {
 }
 
 /* ===== Extra Stuff ===== */
-.crypto-project-image {
+.crypto-project-image,
+.capstone-project-image {
   width: 100%;
   max-width: 800px;
   display: block;
@@ -121,27 +130,146 @@ iframe {
   border-radius: 8px;
 }
 
-.social-footer {
+.video-container {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* ===== Pixel Animations ===== */
+.pixel-header-row {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  min-width: 280px;
+}
+
+.pixel-angel {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  display: inline-block;
+  margin: 0 10px; /* (top/bottom) and (left/right) */
+  transform: scaleX(-1); /* Flip horizontally */
+  flex-shrink: 0;
+}
+
+.pixel-dragon {
+  width: 105px;
+  height: 105px;
+  image-rendering: pixelated;
+  display: inline-block;
+  margin: 0 10px;
+  transform: scaleX(-1);
+  flex-shrink: 0;
+}
+
+.pixel-header-row h1 {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 6rem 0 2rem; /* top | horizontal | bottom */
+  font-size: 1rem;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1100px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  flex-wrap: wrap;
   gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.left-section {
+  text-align: left;
+}
+
+.right-section {
+  text-align: right;
+}
+
+.footer-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+}
+
+.footer-section p {
+  font-size: .75rem;
+  top: 1rem;
+  margin-bottom: 0;
+  color: #999083;
+}
+
+.left-section p {
+  text-align: left;
+  margin-top: 1.3rem;
+}
+
+.social-footer {
+  display: flex;
+  justify-content: right;
+  gap: 1.5rem;
   padding: 1.5rem;
 }
 
 .social-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   transition: transform 0.3s, color 0.3s;
 }
 
 .social-icon:hover {
   transform: scale(1.2);
-  color: #1db954; /* Spotify green - adjust as needed */
+  color: #1db954; 
 }
 
-.video-container {
-  margin: 2rem auto;
-  max-width: 800px;
+.footer-email {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .left-section, 
+  .right-section {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
 
 /* ===== MEDIA QUERIES ===== */
@@ -151,17 +279,27 @@ iframe {
     font-size: 14px;
   }
 
-  /* Base scaling */
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   h2 {
     font-size: 1.4rem;
   }
 
-  .footer {
-    padding: 1rem;
+  .pixel-header-row {
+    gap: 0.5rem;
+    padding: 0.5rem;;
+  }
+
+  .pixel-angel {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pixel-dragon {
+    width: 70px;
+    height: 70px;
   }
 }
 
@@ -172,19 +310,17 @@ iframe {
   }
 
   h1 {
-    font-size: 1.6rem;
-    text-decoration: none;
-    /* Cleaner on small screens */
+    font-size: 1.3rem;
+    white-space: nowrap;
   }
 
-  .footer {
-    flex-direction: column;
-    gap: 0.75rem;
-    /* Stack items tightly */
+  .pixel-angel {
+    width: 25px;
+    height: 25px;
   }
 
-  .header-image {
-    margin-bottom: 1rem;
-    /* Reduce image spacing */
+  .pixel-dragon {
+    width: 60px;
+    height: 60px;
   }
 }

@@ -23,3 +23,7 @@ Updates your live website (GitHub Pages)
 Does not save your source code changes to GitHub)
 Will have to update Github's settings->pages->custom domains, each time, unless having a public/CNAME file with url
 
+# Pushing/Saving to GitHub
+Can result in "404 File not found" error
+May have to wait some time
+rm -rf build/ && npm run build && npm run deploy
