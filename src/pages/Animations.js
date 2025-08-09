@@ -1,10 +1,17 @@
 import { FaYoutube } from 'react-icons/fa';
+import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
+import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
+import Footer from '../components/Footer';
 
 export default function Animations() {
     return (
         <div className="page-animations">
             <header>
-                <h1>Animation Projects</h1>
+                <div className="pixel-header-row">
+                    <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
+                    <h1>Animations</h1>
+                    <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
+                </div>
             </header>
 
             <main>
@@ -29,11 +36,11 @@ export default function Animations() {
                 <p>Our hero's quest to save the moon begins</p>
             </main>
 
-            <footer className="social-footer">
-                <a href="https://youtube.com/@CastleBomber" target="_blank" rel="noopener noreferrer">
-                    <FaYoutube className="social-icon" />
-                </a>
-            </footer>
+            <Footer
+                iconLinks={[
+                    { href: "https://youtube.com/@CastleBomber", icon: <FaYoutube />, label: "Youtube" }
+                ]}
+            />
         </div>
     );
 }

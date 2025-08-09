@@ -8,6 +8,7 @@
 html,
 body,
 .app-container {
+  overscroll-behavior-y: contain;
   min-height: 100vh;
   background-color: #1e1e2f;
   font-family: Georgia;
@@ -28,12 +29,13 @@ body,
     "footer";
 
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
 
   width: 100vw;
   height: 100vh;
 
   max-width: 100%;
+  padding-top: 60px; /* Match navbar height */
   padding-right: 0px;
   padding-left: 0px;
   margin-right: auto;
@@ -73,14 +75,12 @@ body,
 }
 
 /* Grid areas */
-nav {
-  grid-area: nav;
-}
-
 header {
   grid-area: header;
-  overflow: hidden;
+  overflow: visible;
   min-height: 80px;
+  padding-top: 4rem;
+  padding-bottom: 7rem;
 }
 
 main {
@@ -95,21 +95,16 @@ article {
   grid-area: article;
 }
 
-/* ===== Extra Stuff ===== */
-.crypto-project-image,
-.capstone-project-image {
-  width: 100%;
-  max-width: 800px;
-  display: block;
-  margin: 0 auto 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.error-message {
-  color: #fff;
-  text-align: center;
-  margin-top: 20px;
+/* ===== Navbar ===== */
+/* Targets React-Bootstrap's Navbar */
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1030 !important; /* Higher than Bootstrap's default */
+  background-color: #1e1e2f !important;
+  border-bottom: 1px solid #1e1e2f !important;
 }
 
 .navbar-profile-img {
@@ -118,56 +113,6 @@ article {
   margin-right: 10px;
   border-radius: 50%;
   object-fit: cover;
-}
-.video-container {
-  margin: 2rem auto;
-  max-width: 800px;
-}
-
-iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
-}
-
-.video-container {
-  margin: 2rem auto;
-  max-width: 800px;
-}
-
-/* ===== Pixel Animations ===== */
-.pixel-header-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  min-width: 280px;
-}
-
-.pixel-angel {
-  width: 40px;
-  height: 40px;
-  image-rendering: pixelated;
-  display: inline-block;
-  margin: 0 10px; /* (top/bottom) and (left/right) */
-  transform: scaleX(-1); /* Flip horizontally */
-  flex-shrink: 0;
-}
-
-.pixel-dragon {
-  width: 105px;
-  height: 105px;
-  image-rendering: pixelated;
-  display: inline-block;
-  margin: 0 10px;
-  transform: scaleX(-1);
-  flex-shrink: 0;
-}
-
-.pixel-header-row h1 {
-  flex-shrink: 0;
-  text-align: center;
 }
 
 /* ===== Footer ===== */
@@ -235,6 +180,11 @@ iframe {
   margin-top: 1.3rem;
 }
 
+.right-section p {
+  text-align: right;
+  margin-top: 1.3rem;
+}
+
 .social-footer {
   display: flex;
   justify-content: right;
@@ -257,19 +207,65 @@ iframe {
   margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .left-section, 
-  .right-section {
-    text-align: center;
-  }
+/* ===== Pixel Animations ===== */
+.pixel-header-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 1rem;
+  min-width: 280px;
+}
 
-  .social-icons {
-    justify-content: center;
-  }
+.pixel-angel {
+  width: 40px;
+  height: 40px;
+  image-rendering: pixelated;
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%) scaleX(-1);
+}
+
+.pixel-dragon {
+  width: 105px;
+  height: 105px;
+  image-rendering: pixelated;
+  position: absolute;
+  right: 25%;
+  transform: translateX(50%) scaleX(-1);
+}
+
+.pixel-header-row h1 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ===== Extra Stuff ===== */
+.crypto-project-image,
+.capstone-project-image {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+}
+
+.video-container {
+  margin: 2rem auto; /* (top/bottom) and (left/right) */
+  max-width: 800px;
 }
 
 /* ===== MEDIA QUERIES ===== */
@@ -295,11 +291,17 @@ iframe {
   .pixel-angel {
     width: 30px;
     height: 30px;
+    left: 20%;
   }
 
   .pixel-dragon {
     width: 70px;
     height: 70px;
+    right: 20%;
+  }
+
+  .social-icons {
+    justify-content: center;
   }
 }
 
@@ -317,10 +319,12 @@ iframe {
   .pixel-angel {
     width: 25px;
     height: 25px;
+    left: 15%;
   }
 
   .pixel-dragon {
     width: 60px;
     height: 60px;
+    right: 15%;
   }
 }

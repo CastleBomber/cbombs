@@ -5,6 +5,7 @@ import profileImg from '../images/header/r13-cbombs.png';
 const NavBar = () => {
 
   return (
+    /* React-Bootstrap automatically adds the navbar class */
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <img 

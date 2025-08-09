@@ -1,5 +1,3 @@
-import { FaGithub, FaYoutube, FaTiktok } from 'react-icons/fa';
-
 export default function Footer({ iconLinks }) {
     return (
         <footer className="footer">
@@ -11,7 +9,8 @@ export default function Footer({ iconLinks }) {
                     <p className="footer-email">Email: cbombs@cbombs.com</p>
                 </div>
                 <div className="footer-section right-section">
-                    <h3>CastleBomber Software Studios</h3>
+                    <h3>CastleBomber <br />Software Studios</h3>
+                    <p>"Software for everyone"</p>
                     <div className="social-footer">
                         {iconLinks.map(({ href, icon, label }) => (
                             <a

@@ -1,4 +1,4 @@
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Crypto from './pages/Crypto';
@@ -9,14 +9,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-container">
+      <div style={{ background: '#1e1e2f', minHeight: '100vh' }}>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/crypto" element={<Crypto />} />
-          <Route path="/animations" element={<Animations />} />
-          <Route path="/capstone" element={<Capstone />} />
-        </Routes>
+        <div className="app-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/crypto" element={<Crypto />} />
+            <Route path="/animations" element={<Animations />} />
+            <Route path="/capstone" element={<Capstone />} />
+          </Routes>
+        </div>
       </div>
     </ BrowserRouter>
   );

@@ -1,13 +1,21 @@
 import { FaGithub } from 'react-icons/fa';
+import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
+import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import crypto1 from "../images/crypto-page/crypto-1.jpg";
 import crypto2 from "../images/crypto-page/crypto-2.jpg";
 import mongoDB from "../images/crypto-page/mongo-db.jpg";
+import Footer from '../components/Footer';
+
 
 export default function Crypto() {
     return (
         <div className="page-crypto">
             <header>
-                <h1>Crypto Stuff</h1>
+                <div className="pixel-header-row">
+                    <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
+                    <h1>Crytpo</h1>
+                    <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
+                </div>
             </header>
             <main>
                 <img src={crypto1} alt="Web3 Crypto App" className="crypto-project-image" />
@@ -23,11 +31,11 @@ export default function Crypto() {
                 <p>Users, transactions, and goals are stored and accessible with MongoDB.</p>
             </main>
 
-            <footer className="social-footer">
-                <a href="https://github.com/CastleBomber/web-pages-unleashed/tree/feature/holesky-testnet" target="_blank" rel="noopener noreferrer">
-                    <FaGithub className="social-icon" />
-                </a>
-            </footer>
+            <Footer
+                iconLinks={[
+                    { href:"https://github.com/CastleBomber/web-pages-unleashed/tree/feature/holesky-testnet", icon: <FaGithub />, label: "GitHub" }
+                ]}
+            />
         </div>
     );
 }
