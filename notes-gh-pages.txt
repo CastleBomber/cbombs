@@ -26,4 +26,4 @@ Will have to update Github's settings->pages->custom domains, each time, unless 
 # Pushing/Saving to GitHub
 Can result in "404 File not found" error
 May have to wait some time
-rm -rf build/ && npm run build && npm run deploy
+rm -rf node_modules/ package-lock.json build/ && npm install && npm run build && npm run deploy

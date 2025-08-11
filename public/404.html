@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      sessionStorage.redirect = location.href;
-    </script>
-    <meta http-equiv="refresh" content="0;URL='/'"></meta>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Capture the broken path
+    const path = window.location.pathname + window.location.search;
+    sessionStorage.setItem('redirect', path);
+    
+    // Redirect to index with original path
+    window.location.replace('/#' + path);
+  </script>
+  <!-- Fallback for non-JS -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; URL=/" />
+  </noscript>
+</head>
+<body>
+  <p>Redirecting to homepage... <a href="/">Click here</a> if not automatic.</p>
+</body>
 </html>
