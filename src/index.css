@@ -13,6 +13,11 @@ body,
   background-color: #1e1e2f;
   font-family: Georgia;
   color: white;
+
+  /* New stuff for video */
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
 }
 
 /* ===== LAYOUT STRUCTURE ===== */
@@ -263,9 +268,21 @@ iframe {
   border-radius: 8px;
 }
 
+/* Portfolio videos */
 .video-container {
   margin: 2rem auto; /* (top/bottom) and (left/right) */
   max-width: 800px;
+}
+
+/* Background video, darken for better video contrast */
+video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* ===== MEDIA QUERIES ===== */
