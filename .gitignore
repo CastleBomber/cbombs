@@ -35,3 +35,7 @@ yarn-error.log*
 .next/
 .svelte-kit/
 .vercel/
+
+# Videos
+/public/videos/formats/
+public/videos/formats/

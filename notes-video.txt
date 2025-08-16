@@ -1,0 +1,2 @@
+# Converting video to a smaller format size
+ffmpeg -i sky-bg.mp4 -vf "fps=24,scale=-1:720" -vcodec libx264 -crf 28 -preset fast -an -movflags +faststart compressed-sky-bg-v3.mp4

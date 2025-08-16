@@ -26,4 +26,21 @@ Will have to update Github's settings->pages->custom domains, each time, unless 
 # Pushing/Saving to GitHub
 Can result in "404 File not found" error
 May have to wait some time
+*******
+git checkout main
+git branch -D gh-pages  # Delete local gh-pages
+git push origin --delete gh-pages  # Delete remote again
+
+# May need to recreate gh-pages if missing
+...
+
+
+
+
+
+rm -rf build/ node_modules/ package-lock.json
+npm install
+npm run deploy  # Let gh-pages package recreate the branch properly
+
+Nuclear Option:
 rm -rf node_modules/ package-lock.json build/ && npm install && npm run build && npm run deploy
