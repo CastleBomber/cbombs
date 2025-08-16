@@ -31,6 +31,10 @@ git checkout main
 git branch -D gh-pages  # Delete local gh-pages
 git push origin --delete gh-pages  # Delete remote again
 
+# May need to recreate gh-pages if missing
+...
+
+
 rm -rf build/ node_modules/ package-lock.json
 npm install
 npm run deploy  # Let gh-pages package recreate the branch properly
