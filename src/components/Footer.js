@@ -10,7 +10,7 @@ export default function Footer({ iconLinks }) {
                 </div>
                 <div className="footer-section right-section">
                     <h3>CastleBomber <br />Software Studios</h3>
-                    <p>"Software for everyone"</p>
+                    <p>"Software for all"</p>
                     <div className="social-footer">
                         {iconLinks.map(({ href, icon, label }) => (
                             <a

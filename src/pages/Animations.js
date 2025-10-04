@@ -23,7 +23,7 @@ export default function Animations() {
                     </iframe>
                 </div>
                 <h2>  [Dance Battle]  </h2>
-                <p>A battle with the king dragon to save the moon</p>
+                <p>A battle with the dragon king to save the moon</p>
 
                 <div className='video-container'>
                     <iframe width="560" height="315"
