@@ -131,6 +131,7 @@ article {
   min-height: 50px !important; 
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
 .navbar-brand {
@@ -146,6 +147,28 @@ article {
   margin-right: 10px;
   border-radius: 50%;
   object-fit: cover;
+  /* cursor: pointer; */
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.offcanvas {
+  width: 260px !important;
+}
+
+.offcanvas .nav-link {
+  color: #ddd !important;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.offcanvas .nav-link:hover {
+  background-color: rgba(255,255,255,0.1);
 }
 
 /* ===== Footer ===== */

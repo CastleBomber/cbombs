@@ -34,6 +34,12 @@ Will have to update Github's settings->pages->custom domains, each time, unless 
 
 
 # Pushing/Saving to GitHub
+New 
+git add .
+git commit -m "Some description of what you changed"
+git push origin main
+
+Old
 Can result in "404 File not found" error
 May have to wait some time
 *** Use cautiously (may be problematic) ****

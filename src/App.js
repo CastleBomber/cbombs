@@ -4,7 +4,7 @@ import VideoBackground from './components/VideoBackground';
 import Home from './pages/Home';
 import Crypto from './pages/Crypto';
 import Animations from './pages/Animations';
-import Capstone from './pages/Capstone';
+import VRPage from './pages/VRPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/crypto" element={<Crypto />} />
             <Route path="/animations" element={<Animations />} />
-            <Route path="/capstone" element={<Capstone />} />
+            <Route path="/vrpage" element={<VRPage />} />
           </Routes>
         </div>
       </div>

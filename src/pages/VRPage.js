@@ -4,7 +4,7 @@ import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import capstone1 from "../images/capstone-page/capstone-poster.jpg";
 import Footer from '../components/Footer';
 
-export default function Capstone() {
+export default function VRPage() {
     return (
         <div className="page-capstone">
             <header>

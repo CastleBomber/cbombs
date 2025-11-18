@@ -14,7 +14,7 @@ export default function Crypto() {
             img: crypto1,
             alt: "Web3 Crypto App",
             title: "[Home Page]",
-            text: "Web3 crypto app that allows users to send and log crypto transactions."
+            text: "Web3 crypto app that allows users to send and log crypto transactions"
         },
         {
             img: crypto2,
