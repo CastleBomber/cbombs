@@ -9,9 +9,7 @@ function VideoBackground() {
         if (videoRef.current) {
             // Force reload and play the video
             videoRef.current.load();
-            videoRef.current.play().catch(e => {
-                console.log('Autoplay prevented, trying again:', e);
-                // Retry after a short delay
+            videoRef.current.play().catch(() => {
                 setTimeout(() => {
                     if (videoRef.current) videoRef.current.play();
                 }, 300);
@@ -29,18 +27,17 @@ function VideoBackground() {
             autoPlay
             loop
             muted
+            onTimeUpdate={(e) => {
+                const vid = e.target;
+                if (vid.duration - vid.currentTime < 2.5) {
+                    vid.currentTime = 0; // restart early
+                }
+            }}
         >
-            {/* Desktop version (default) */}
+            {/* Sky background */}
             <source
-                src="/videos/sky-bg-short-compressed.mp4"
+                src="https://cdn.pixabay.com/video/2024/03/13/204006-923133925_small.mp4"
                 type="video/mp4"
-                media="(min-width: 769px)"
-            />
-            {/* Mobile version */}
-            <source
-                src="/videos/sky-bg-short-compressed-mobile.mp4"
-                type="video/mp4"
-                media="(max-width: 768px)"
             />
         </video>
     );
