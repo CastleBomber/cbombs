@@ -102,6 +102,7 @@ header {
   min-height: 80px;
   padding-top: 4rem;
   padding-bottom: 7rem;
+  transition: opacity 0.8s ease;
 }
 
 main {
@@ -312,12 +313,14 @@ article {
 
 /* ===== Pixel Animations ===== */
 .pixel-header-row {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 1rem;
-  min-width: 280px;
 }
 
 .pixel-angel {
@@ -414,15 +417,58 @@ iframe {
 }
 
 /* Scroll fade in/out feature */
-.reveal-hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.scroll-section {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
 }
 
-.reveal-show {
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 
+    opacity 1.2s ease,
+    transform 1.2s ease;
+}
+
+.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+header.fade-out {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* HERO behavior */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroIntro 1.2s ease forwards;
+}
+
+@keyframes heroIntro {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Portfolio videos ===== */
