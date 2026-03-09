@@ -3,6 +3,7 @@ import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { SiEthereum } from 'react-icons/si';
 import { GiVrHeadset, GiFilmStrip } from 'react-icons/gi';
+import { PiVirtualRealityBold } from "react-icons/pi";
 import profileImg from '../images/header/r13-cbombs.png';
 
 const NavBar = () => {
@@ -50,7 +51,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link as={Link} to="/vrpage" onClick={() => setShow(false)}
               className="d-flex align-items-center gap-3 text-light sidebar-link">
-              <GiVrHeadset size={18}/>
+              <PiVirtualRealityBold size={18}/>
               Virtual Reality
             </Nav.Link>
             <Nav.Link as={Link} to="/animations" onClick={() => setShow(false)}

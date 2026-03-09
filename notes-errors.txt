@@ -1,0 +1,7 @@
+### ERRORS ####
+
+ProcessError: error: RPC failed; curl 55 LibreSSL SSL_read
+May need to delete heavy files or
+May need to generate an SSH key
+Run:
+git remote set-url origin git@github.com:CastleBomber/cbombs.git

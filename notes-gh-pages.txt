@@ -35,12 +35,23 @@ Will have to update Github's settings->pages->custom domains, each time, unless 
 
 
 # Pushing/Saving to GitHub
-# New 
+# New method
 git add .
 git commit -m "Some description of what you changed"
 git push origin main
+(npm run build && npm run deploy)
+(then wait some time for it to be online again)
 
-# Old
+
+
+
+
+
+
+
+
+-------------------------------------------------
+# Old method (problematic)
 Can result in "404 File not found" error
 May have to wait some time
 *** Use cautiously (may be problematic) ****
@@ -57,16 +68,11 @@ Nuclear Option:
 rm -rf node_modules/ package-lock.json build/ && npm install && npm run build && npm run deploy
 
 
+
 # May have files stuck on gh-pages that need to go onto main
 # From main branch
 git merge gh-pages --no-ff -m "Recover lost files"
 
-
-# Troubleshoot
-# error
-ProcessError: error: RPC failed; curl 55 LibreSSL SSL_read
-May need to delete heavy files or
-May need to generate an SSH key
 
 
 
