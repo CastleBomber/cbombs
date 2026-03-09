@@ -21,8 +21,6 @@ body,
 html,
 body {
   overflow-x: hidden;
-  /* overflow-anchor: none; */
-  height: auto;
   height: 100%;
 }
 
@@ -61,8 +59,6 @@ body {
   margin-right: auto;
   margin-left: auto;
   overflow-x: hidden;
-
-  /* margin-bottom: 50px; */
 }
 
 .page-home h1,
