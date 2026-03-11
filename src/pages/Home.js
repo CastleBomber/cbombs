@@ -13,7 +13,7 @@ export default function Home() {
             <header className="fade-in">
                 <div className="pixel-header-row" >
                     <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
-                    <h1 className='special-border'>Welcome!</h1>
+                    <h1 className='special-border'>Welcome!*</h1>
                     <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                 </div>
             </header>
