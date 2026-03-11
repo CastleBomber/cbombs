@@ -34,6 +34,8 @@ Does not save your source code changes to GitHub)
 Will have to update Github's settings->pages->custom domains, each time, unless having a public/CNAME file with url
 
 
+
+###
 # Pushing/Saving to GitHub
 # New method
 git add .
