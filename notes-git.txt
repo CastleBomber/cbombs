@@ -48,6 +48,7 @@ npm deploy
 
 # Show status of saved and unsaved work
 # Commit or stash your changes beforehand to avoid errors
+# May need to use 'git restore *build/' to discard changes (minor)
 git status
 git branch 
 git checkout -b feature/scroll-opacity
