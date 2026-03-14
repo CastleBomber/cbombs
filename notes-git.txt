@@ -14,6 +14,7 @@ npm run build && npm run deploy
 
 
 
+
 # -------------------------------------------------
 # Save to GitHub
 
@@ -22,6 +23,13 @@ git commit -m "Some description of what you changed"
 git push origin main
 npm run build && npm run deploy
 (then wait some time for it to be online again)
+
+
+
+# Option
+rm -rf build/ node_modules/ package-lock.json
+npm install
+npm run deploy  # Let gh-pages package recreate the branch properly
 
 
 # Optionl, if stuck
@@ -33,11 +41,6 @@ npm deploy
 npm run deploy -- --force
 npm run
 npm deploy
-
-
-
-
-
 
 
 
