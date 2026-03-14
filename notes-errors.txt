@@ -1,7 +1,28 @@
-### ERRORS ####
+# -------------------------------------------------
+# Fix errors
+rm -rf build/ node_modules/ package-lock.json
+npm install
+npm run deploy  # Let gh-pages package recreate the branch properly
 
-ProcessError: error: RPC failed; curl 55 LibreSSL SSL_read
+
+
+
+
+# -------------------------------------------------
+# ProcessError: error: RPC failed; curl 55 LibreSSL SSL_read
+Solution:
 May need to delete heavy files or
 May need to generate an SSH key
 Run:
 git remote set-url origin git@github.com:CastleBomber/cbombs.git
+
+
+
+
+# -------------------------------------------------
+# Error
+# From my initial 'git add .' i had received the error
+# fatal: Need to specify how to reconcile divergent branches.
+# error: failed to push some refs to 'https://github.com/CastleBomber/website-cbombs'
+Solution:
+git pull origin main --no-rebase

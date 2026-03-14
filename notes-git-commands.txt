@@ -1,4 +1,0 @@
-tree -d -L 2
-
-git add .
-git status --ignored
