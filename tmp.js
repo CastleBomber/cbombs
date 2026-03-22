@@ -1,49 +1,96 @@
-useEffect(() => {
-  const hero = headerRef.current;
-  if (!hero) return;
+import { FaGithub, FaYoutube, FaTiktok } from 'react-icons/fa';
+import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
+import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
+import Footer from '../components/Footer';
+import { useEffect } from 'react';
 
-  let ticking = false;
+export default function Home() {
+    useEffect(() => {
+        // Scroll‑linked opacity: each .scroll‑section fades based on how much is visible
+        const sections = document.querySelectorAll('.scroll-section');
+        if (!sections.length) return;
 
-  const updateHero = () => {
-    const scrollY = window.scrollY;
+        let ticking = false;
 
-    // fade distance (increase if you want slower fade)
-    const fadePoint = 500;
+        // Calculate visible ratio and apply opacity
+        const updateOpacity = () => {
+            const viewportHeight = window.innerHeight;
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+                const visibleRatio = Math.max(0, Math.min(1, visibleHeight / viewportHeight));
+                section.style.opacity = visibleRatio;
+            });
+            ticking = false;
+        };
 
-    const progress = Math.min(scrollY / fadePoint, 1);
+        // Throttle scroll updates with requestAnimationFrame
+        const onScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateOpacity);
+                ticking = true;
+            }
+        };
 
-    hero.style.transform = `translateY(${progress * -120}px)`;
-    hero.style.opacity = `${1 - progress}`;
+        // Initial update
+        updateOpacity();
 
-    ticking = false;
-  };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
 
-  const onScroll = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateHero);
-      ticking = true;
-    }
-  };
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
+        };
+    }, []);
 
-  // Run once on load so it starts correct even if page restores scroll
-  updateHero();
+    return (
+        <div className="page-home">
+            {/* HERO - full viewport, fades in on load, fades out on scroll */}
+            <section className="scroll-section">
+                <header>
+                    <div className="pixel-header-row hero-content" >
+                        <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
+                        <h1 className='special-border'>Welcome!</h1>
+                        <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
+                    </div>
+                </header>
+            </section>
 
-  window.addEventListener("scroll", onScroll, { passive: true });
+            {/* MAIN - full viewport, fades in then out on scroll */}
+            <section className="scroll-section">
+                <main>
+                    {/* Video */}
+                    <div className="video-container">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi"
+                            title="YouTube"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                    <h2>  [Angels and Dragons]  </h2>
+                    <p>VR Music Festival hoping to inspire good and light into the world</p>
+                </main>
+            </section>
 
-  // Section reveal (keep your observer)
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle("show", entry.isIntersecting);
-      });
-    },
-    { threshold: 0.35 }
-  );
-
-  document.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
-
-  return () => {
-    window.removeEventListener("scroll", onScroll);
-    observer.disconnect();
-  };
-}, []);
+            {/* FOOTER */}
+            <section className="scroll-section footer-wrapper">
+                <footer>
+                    <Footer
+                        iconLinks={[
+                            { href: "https://github.com/CastleBomber", icon: <FaGithub />, label: "GitHub" },
+                            { href: "https://youtube.com/@CastleBomber", icon: <FaYoutube />, label: "YouTube" },
+                            { href: "https://tiktok.com/@CastleBomber", icon: <FaTiktok />, label: "TikTok" }
+                        ]}
+                    />
+                </footer>
+            </section>
+        </div>
+    );
+}

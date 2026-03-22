@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { SiEthereum } from 'react-icons/si';
-import { GiVrHeadset, GiFilmStrip } from 'react-icons/gi';
+import { GiFilmStrip } from 'react-icons/gi';
 import { PiVirtualRealityBold } from "react-icons/pi";
 import profileImg from '../images/header/r13-cbombs.png';
 

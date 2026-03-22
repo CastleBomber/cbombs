@@ -2,13 +2,13 @@ export default function Footer({ iconLinks }) {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <div className="footer-section left-section">
+                <div className="footer-column left-section">
                     <h3>Connect</h3>
-                    <p>If you'd like to collaborate on projects,< br />
+                    <p>If you'd like to collaborate on projects,<br />
                         feel free to send a message</p>
                     <p className="footer-email">Email: cbombs@cbombs.com</p>
                 </div>
-                <div className="footer-section right-section">
+                <div className="footer-column right-section">
                     <h3>CastleBomber <br />Software Studios</h3>
                     <p>"Software for all"</p>
                     <div className="social-footer">
