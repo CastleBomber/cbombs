@@ -1,0 +1,21 @@
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr; /* stack columns on mobile */
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-left, .footer-right {
+    text-align: center;        /* center text when stacked */
+  }
+  
+  .social-footer {
+    justify-content: center;    /* center social icons when stacked */
+  }
+  
+  /* Ensure pixel images don't overflow */
+  .pixel-angel, .pixel-dragon {
+    max-width: 100%;
+    height: auto;
+  }
+}

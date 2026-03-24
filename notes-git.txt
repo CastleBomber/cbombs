@@ -33,14 +33,15 @@ npm run deploy  # Let gh-pages package recreate the branch properly
 
 
 # Optionl, if stuck
-make an edit, then:
-npm deploy
+# make an edit, then:
+
+npm run build
+npm run deploy
 
 
 # Optional
 npm run deploy -- --force
-npm run
-npm deploy
+npm run deploy
 
 
 
@@ -194,7 +195,4 @@ rm -rf node_modules/ package-lock.json build/ && npm install && npm run build &&
 # May have files stuck on gh-pages that need to go onto main
 # From main branch
 git merge gh-pages --no-ff -m "Recover lost files"
-
-
-
 

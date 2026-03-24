@@ -46,8 +46,6 @@ body {
 .page-animations,
 .page-capstone {
   display: grid;
-  flex-direction: column;
-
   grid-template-areas:
     "header"
     "main"
@@ -233,6 +231,7 @@ article {
   left: 0;
 }
 
+/* Footer divider: ────────────── */
 .footer::before {
   content: "";
   position: absolute;
@@ -246,23 +245,20 @@ article {
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36rem;
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0 2rem;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding-bottom: 2rem;
+  padding: 0 2rem 2rem 2rem;
 }
 
-.left-section {
+.footer-left {
   text-align: left;
 }
 
-.right-section {
+.footer-right {
   text-align: right;
 }
 
@@ -273,27 +269,25 @@ article {
 }
 
 .footer-column {
-  flex: 1 1 auto;
   min-width: 250px;
 }
 
 .footer-column h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .footer-column p {
-  font-size: .75rem;
-  top: 1rem;
+  font-size: 1 rem;
   margin-bottom: 0;
   color: #7A7266;
 }
 
-.left-section p {
+.footer-left p {
   text-align: left;
   margin-top: 1.3rem;
 }
 
-.right-section p {
+.footer-right p {
   text-align: right;
   margin-top: 1.3rem;
 }
@@ -306,7 +300,7 @@ article {
 }
 
 .social-icon {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #7A7266;
   transition: transform 0.3s, color 0.3s;
 }
@@ -318,6 +312,7 @@ article {
 
 .footer-email {
   margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
 /* ████████████████████████████████████████████████████████████████████████ */
@@ -335,11 +330,11 @@ article {
 }
 
 .pixel-angel {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   image-rendering: pixelated;
   position: absolute;
-  left: 25%;
+  left: 15%;
   transform: translateX(-50%) scaleX(-1);
 }
 
@@ -348,7 +343,7 @@ article {
   height: 160px;
   image-rendering: pixelated;
   position: absolute;
-  right: 25%;
+  right: 15%;
   transform: translateX(50%) scaleX(-1);
 }
 
@@ -473,9 +468,9 @@ article {
 }
 
 .scroll-section.footer-wrapper {
-  min-height: 75vh;
-  align-items: flex-end;    /* moves content to bottom */
-  justify-content: center;  /* keeps horizontal centering */
+  min-height: 75vh; 
+  display: grid;
+  align-items: end;
 }
 
 .scroll-section header {
@@ -564,7 +559,7 @@ iframe {
 
   .background-video {
     /* object-position: 20% 50%; */
-    transform: scale(1.25);
+    transform: scale(1.1);
   }
 
   .background-video::after {
