@@ -40,11 +40,11 @@ body {
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                              LAYOUT STRUCTURE                            */
 /* ████████████████████████████████████████████████████████████████████████ */
-/* Shared page styles */
 .page-home,
 .page-crypto,
 .page-animations,
 .page-capstone {
+  /* Shared page styles */
   display: grid;
   grid-template-areas:
     "header"
@@ -95,7 +95,9 @@ body {
   font-size: 1rem;
 }
 
-/* Grid areas */
+/* ████████████████████████████████████████████████████████████████████████ */
+/*                               GRID AREAS                                 */
+/* ████████████████████████████████████████████████████████████████████████ */
 header {
   grid-area: header;
   overflow: visible;
@@ -121,8 +123,8 @@ article {
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                                   NAVBAR                                 */
 /* ████████████████████████████████████████████████████████████████████████ */
-/* Targets React-Bootstrap's Navbar */
 .navbar {
+  /* Targets React-Bootstrap's Navbar */
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
@@ -157,7 +159,9 @@ article {
   letter-spacing: 1px;
 }
 
-/* Offcanvas = Sidebar menu */
+/* ████████████████████████████████████████████████████████████████████████ */
+/*                             SIDEBAR MENU                                 */
+/* ████████████████████████████████████████████████████████████████████████ */
 .offcanvas,
 .custom-offcanvas {
   width: 260px !important;
@@ -165,9 +169,10 @@ article {
   color: white !important;
 }
 
-/* Close (X) button white */
+
 .offcanvas .btn-close,
 .custom-offcanvas .btn-close {
+  /* Close (X) button white */
   filter: invert(1) brightness(200);
 }
 
@@ -179,20 +184,19 @@ article {
   transition: background-color 0.2s;
 }
 
-/* Hover effect for nav links */
 .offcanvas .nav-link:hover,
 .custom-offcanvas .nav-link:hover {
+  /* Hover effect for nav links */
   background-color: rgba(255,255,255,0.15) !important;
 }
 
-/* Light header section like your screenshot */
 .sidebar-header {
   background: rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Divider line inside sidebar */
 .sidebar-divider {
+  /* Sidebar's Divider line */
   width: 100%;
   height: 1px;
   background: rgba(255,255,255,0.15);
@@ -207,14 +211,14 @@ article {
   background: rgba(255,255,255,0.1);
 }
 
-/* Hamburger icon → make white */
 .custom-toggler .navbar-toggler-icon {
+  /* Hamburger icon → make white */
   filter: invert(1) brightness(100);
 }
 
-/* Outline around hamburger menu icon */
 .custom-toggler:focus,
 .custom-toggler:focus-visible {
+  /* Outline around hamburger menu icon */
   outline: 2px solid white !important;
   box-shadow: none !important;
 }
@@ -231,8 +235,8 @@ article {
   left: 0;
 }
 
-/* Footer divider: ────────────── */
 .footer::before {
+  /* Footer's Divider: ────────────── */
   content: "";
   position: absolute;
   top: 3rem;
@@ -377,8 +381,8 @@ article {
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                                 CAROUSEL                                 */
 /* ████████████████████████████████████████████████████████████████████████ */
-/* React-Bootstrap’s <Carousel.Item> → className="carousel-item" */
 .crypto-carousel .carousel-item {
+  /* React-Bootstrap’s <Carousel.Item> → className="carousel-item" */
   overflow: hidden;
 }
 
@@ -416,14 +420,9 @@ article {
   margin: 0;
 }
 
-/* ===== Portfolio videos ===== */
-.video-container {
-  margin: 2rem auto;
-  /* (top/bottom) and (left/right) */
-  max-width: 800px;
-}
-
-/* ===== Background video ===== */
+/* ████████████████████████████████████████████████████████████████████████ */
+/*                              BACKGROUND VIDEO                            */
+/* ████████████████████████████████████████████████████████████████████████ */
 .background-video {
   position: fixed;
   inset: 0;
@@ -444,8 +443,8 @@ article {
   backface-visibility: hidden;
 }
 
-/* Darken overlay for background video */
 .background-video::after {
+  /* Darken overlay for background video */
   content: '';
   position: fixed;
   top: 0;
@@ -454,6 +453,21 @@ article {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: -1;
+}
+
+/* ████████████████████████████████████████████████████████████████████████ */
+/*                              PORTFOLIO VIDEOS                            */
+/* ████████████████████████████████████████████████████████████████████████ */
+.video-container {
+  margin: 2rem auto;
+  /* (top/bottom) and (left/right) */
+  max-width: 800px;
+}
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
 }
 
 /* ████████████████████████████████████████████████████████████████████████ */
@@ -478,8 +492,8 @@ article {
   text-align: center;
 }
 
-/* Main section heading */
 .scroll-section h2 {
+  /* Main section heading */
   font-size: clamp(2.5rem, 6vw, 4rem);
   margin: 1.5rem 0;
 }
@@ -487,12 +501,11 @@ article {
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                                HERO                                      */
 /* ████████████████████████████████████████████████████████████████████████ */
-/* Fade in the hero content */
 .hero-content {
+  /* Fade in the hero content */
   animation: fadeIn 2s ease-out forwards;
 }
 
-/* Larger hero title */
 .hero-content h1.special-border {
   font-size: clamp(4rem, 10vw, 8rem); /* bigger than before */
   margin: 0;
@@ -505,24 +518,12 @@ article {
 }
 
 /* ████████████████████████████████████████████████████████████████████████ */
-/*                                EXTRA STUFF                               */
+/*                                TESTING !!!                               */
 /* ████████████████████████████████████████████████████████████████████████ */
-.error-message {
-  color: #fff;
-  text-align: center;
-  margin-top: 20px;
-}
-
-iframe {
-  width: 100%;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
-}
 
 /* ████████████████████████████████████████████████████████████████████████ */
-/*                               MEDIA QUERIES                              */
+/*                     TABLET (768px and below)                             */
 /* ████████████████████████████████████████████████████████████████████████ */
-/* Tablet (768px and below) */
 @media (max-width: 768px) {
   :root {
     font-size: 14px;
@@ -558,7 +559,6 @@ iframe {
   }
 
   .background-video {
-    /* object-position: 20% 50%; */
     transform: scale(1.1);
   }
 
@@ -584,8 +584,9 @@ iframe {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  /* Ensure portfolio videos don't get background video styles */
+  
   .video-container video {
+    /* Ensure portfolio videos don't get background video styles */
     position: static;
     transform: none;
     z-index: auto;
@@ -596,11 +597,70 @@ iframe {
   .video-container video::before {
     content: none !important;
   }
+
+  /* ===== TESTING !!! ===== */
+
 }
 
-/* Mobile (480px and below) */
+/* ████████████████████████████████████████████████████████████████████████ */
+/*                      MOBILE (480px and below)                            */
+/* ████████████████████████████████████████████████████████████████████████ */
 @media (max-width: 480px) {
   :root {
     font-size: 13px;
   }
+
+  .pixel-header-row {
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  .pixel-angel,
+  .pixel-dragon {
+    position: static;
+    transform: scaleX(-1); /* keep flip if needed */
+  }
+
+  .pixel-angel {
+    width: 24px;
+    height: 24px;
+  }
+
+  .pixel-dragon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Mobile footer: hide left column, center right column */
+  .footer-content {
+    display: block;                 /* override grid */
+    text-align: center;
+    gap: 0;                         /* remove large gap */
+  }
+
+  .footer-left {
+    display: none;                  /* hide left column */
+  }
+
+  .footer-right {
+    text-align: center;             /* center text */
+  }
+
+  .footer-right p {
+    text-align: center;
+  }
+
+  .social-footer {
+    justify-content: center;        /* center social icons */
+  }
+
+  /* Optional: adjust padding to match new layout */
+  .footer-content {
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  /* ████████████████████████████████████████████████████████████████████████ */
+  /*                                TESTING !!!                               */
+  /* ████████████████████████████████████████████████████████████████████████ */
+
 }
