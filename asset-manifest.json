@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.972526b7.css",
-    "main.js": "/static/js/main.c6b4ce59.js",
+    "main.js": "/static/js/main.d066761e.js",
     "static/js/453.2085dd43.chunk.js": "/static/js/453.2085dd43.chunk.js",
     "static/media/mastra-gold-news-2.png": "/static/media/mastra-gold-news-2.4d21f6a5bc3b04d1b1af.png",
     "static/media/mastra-spy-workflow-3.png": "/static/media/mastra-spy-workflow-3.20bd83838e007f7b2237.png",
@@ -14,11 +14,11 @@
     "static/media/pixel-dragon.gif": "/static/media/pixel-dragon.fd49526a387b056dad1e.gif",
     "index.html": "/index.html",
     "main.972526b7.css.map": "/static/css/main.972526b7.css.map",
-    "main.c6b4ce59.js.map": "/static/js/main.c6b4ce59.js.map",
+    "main.d066761e.js.map": "/static/js/main.d066761e.js.map",
     "453.2085dd43.chunk.js.map": "/static/js/453.2085dd43.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.972526b7.css",
-    "static/js/main.c6b4ce59.js"
+    "static/js/main.d066761e.js"
   ]
 }
