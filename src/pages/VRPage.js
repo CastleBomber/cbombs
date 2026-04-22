@@ -6,11 +6,11 @@ import Footer from '../components/Footer';
 
 export default function VRPage() {
     return (
-        <div className="page-capstone">
+        <div className="web-page">
             <header>
                 <div className="pixel-header-row">
                     <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
-                    <h1>Virtual Reality</h1>
+                    <h1>VR Projects</h1>
                     <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                 </div>
             </header>

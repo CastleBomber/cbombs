@@ -3,30 +3,30 @@ import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../components/Footer';
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
-import crypto1 from "../images/crypto-page/crypto-1.jpg";
-import crypto2 from "../images/crypto-page/crypto-2.jpg";
-import mongoDB from "../images/crypto-page/mongo-db.jpg";
+import stockPrices from "../images/ai-page/mastra-spy-prices-1.png";
+import stockNews from "../images/ai-page/mastra-gold-news-2.png";
+import stockWorkflows from "../images/ai-page/mastra-spy-workflow-3.png";
 
 
-export default function Crypto() {
+export default function AIPage() {
     const slides = [
         {
-            img: crypto1,
-            alt: "Web3 Crypto App",
-            title: "[Home Page]",
-            text: "Web3 crypto app that allows users to send and log crypto transactions"
+            img: stockPrices,
+            alt: "Prices",
+            title: "[Stock Price History]",
+            text: "Shows current and historical price data"
         },
         {
-            img: crypto2,
-            alt: "Dashboard",
-            title: "[Dashboard]",
-            text: "Pulls logged-in user's transactions from the MERN database."
+            img: stockNews,
+            alt: "News",
+            title: "[Stock News]",
+            text: "Displays top 5 most recent headlines"
         },
         {
-            img: mongoDB,
-            alt: "MongoDB",
-            title: "[MongoDB]",
-            text: "Users, transactions, and goals are stored and accessible with MongoDB."
+            img: stockWorkflows,
+            alt: "Workflows",
+            title: "[Stock Workflows]",
+            text: "Shows how far from all-time high"
         }
     ];
 
@@ -34,21 +34,14 @@ export default function Crypto() {
         <div className="web-page">
             <header>
                 <div className="pixel-header-row">
-                    <img
-                        src={pixelAngel}
-                        alt="Pixel Angel"
-                        className="pixel-angel"
-                    />
-                    <h1>Crytpo Projects</h1>
-                    <img
-                        src={pixelDragon}
-                        alt="Pixel Dragon"
-                        className="pixel-dragon"
-                    />
+                    <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
+                    <h1>AI Projects</h1>
+                    <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                 </div>
             </header>
 
             <main>
+                <h1>Stocks AI</h1>
                 <Carousel
                     className="crypto-carousel"
                     interval={30000}
@@ -74,11 +67,7 @@ export default function Crypto() {
 
             <Footer
                 iconLinks={[
-                    {
-                        href: "https://github.com/CastleBomber/web-pages-unleashed/tree/feature/holesky-testnet",
-                        icon: <FaGithub />,
-                        label: "GitHub"
-                    }
+                    { href: "https://github.com/CastleBomber/stocks-ai", icon: <FaGithub />, label: "GitHub" }
                 ]}
             />
         </div>

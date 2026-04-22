@@ -46,13 +46,13 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="page-home">
+        <div className="web-page">
             {/* HERO - full viewport, fades in on load, fades out on scroll */}
             <section className="scroll-section">
                 <header>
                     <div className="pixel-header-row hero-content" >
                         <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
-                        <h1 className='special-border'>Welcome!</h1>
+                        <h1 className='special-border'>Welcome</h1>
                         <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                     </div>
                 </header>
@@ -94,3 +94,4 @@ export default function Home() {
         </div>
     );
 }
+

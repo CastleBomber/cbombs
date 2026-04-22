@@ -13,8 +13,6 @@ npm run build && npm run deploy
 
 
 
-
-
 # -------------------------------------------------
 # Save to GitHub
 
@@ -29,14 +27,12 @@ npm run build && npm run deploy
 # Option
 rm -rf build/ node_modules/ package-lock.json
 npm install
-npm run deploy  # Let gh-pages package recreate the branch properly
 
-
-# Optionl, if stuck
 # make an edit, then:
-
 npm run build
 npm run deploy
+
+
 
 
 # Optional

@@ -5,11 +5,11 @@ import Footer from '../components/Footer';
 
 export default function Animations() {
     return (
-        <div className="page-animations">
+        <div className="web-page">
             <header>
                 <div className="pixel-header-row">
                     <img src={pixelAngel} alt="Pixel Angel" className="pixel-angel" />
-                    <h1>Animations</h1>
+                    <h1>Animation Projects</h1>
                     <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                 </div>
             </header>

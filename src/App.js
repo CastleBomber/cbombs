@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Crypto from './pages/Crypto';
 import Animations from './pages/Animations';
 import VRPage from './pages/VRPage';
+import AIPage from './pages/AIPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <div className="app-container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/aipage" element={<AIPage />} />
             <Route path="/crypto" element={<Crypto />} />
             <Route path="/animations" element={<Animations />} />
             <Route path="/vrpage" element={<VRPage />} />
