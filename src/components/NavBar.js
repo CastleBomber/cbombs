@@ -60,27 +60,27 @@ const NavBar = () => {
           <Nav className="flex-column">
 
             <Nav.Link as={Link} to="/aipage" onClick={() => setShow(false)}
-              className="d-flex align-items-center gap-3 text-light sidebar-link">
-              <LuBrain size={18}/>
-              AI
+              className="text-light sidebar-link">
+                AI
+              <LuBrain size={22}/>
             </Nav.Link>
             
             <Nav.Link as={Link} to="/crypto" onClick={() => setShow(false)}
-              className="d-flex align-items-center gap-3 text-light sidebar-link">
-              <SiEthereum size={18}/>
-              Crypto
+              className="text-light sidebar-link">
+                Crypto
+              <SiEthereum size={22}/>
             </Nav.Link>
 
             <Nav.Link as={Link} to="/vrpage" onClick={() => setShow(false)}
-              className="d-flex align-items-center gap-3 text-light sidebar-link">
-              <GiVrHeadset size={18}/>
-              VR
+              className="text-light sidebar-link">
+                VR
+              <GiVrHeadset size={22}/>
             </Nav.Link>
 
             <Nav.Link as={Link} to="/animations" onClick={() => setShow(false)}
-              className="d-flex align-items-center gap-3 text-light sidebar-link">
-              <GiFilmStrip size={18}/>
-              Animations
+              className="text-light sidebar-link">
+                Animations
+              <GiFilmStrip size={22}/>
             </Nav.Link>
 
           </Nav>

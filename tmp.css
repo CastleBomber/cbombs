@@ -1,21 +1,22 @@
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr; /* stack columns on mobile */
-    gap: 2rem;
-    text-align: center;
-  }
-  
-  .footer-left, .footer-right {
-    text-align: center;        /* center text when stacked */
-  }
-  
-  .social-footer {
-    justify-content: center;    /* center social icons when stacked */
-  }
-  
-  /* Ensure pixel images don't overflow */
-  .pixel-angel, .pixel-dragon {
-    max-width: 100%;
-    height: auto;
-  }
+/* ===== SIDEBAR LINKS ===== */
+.custom-offcanvas .nav-link.sidebar-link {
+  display: flex !important;          /* overrides Bootstrap display:block */
+  flex-direction: row-reverse;       /* text left, icon right */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  color: #ddd !important;
+  padding: 0.85rem 1rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.custom-offcanvas .nav-link.sidebar-link:hover {
+  background: rgba(255,255,255,0.15) !important;
+}
+
+.custom-offcanvas .nav-link.sidebar-link svg {
+  margin-left: 1rem;
+  flex-shrink: 0;
 }

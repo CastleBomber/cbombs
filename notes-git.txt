@@ -24,7 +24,7 @@ npm run build && npm run deploy
 
 
 
-# Option
+# Options to get project back to up and running
 rm -rf build/ node_modules/ package-lock.json
 npm install
 
