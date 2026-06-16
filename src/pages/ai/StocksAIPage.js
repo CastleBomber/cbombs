@@ -1,11 +1,11 @@
 import { FaGithub } from 'react-icons/fa';
 import Carousel from 'react-bootstrap/Carousel';
-import Footer from '../components/Footer';
-import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
-import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
-import stockPrices from "../images/ai-page/mastra-spy-prices-1.png";
-import stockNews from "../images/ai-page/mastra-gold-news-2.png";
-import stockWorkflows from "../images/ai-page/mastra-spy-workflow-3.png";
+import Footer from '../../components/Footer';
+import pixelAngel from 'images/pixel-animations/pixel-angel.gif';
+import pixelDragon from 'images/pixel-animations/pixel-dragon.gif';
+import stockPrices from "images/ai-page/mastra-spy-prices-1.png";
+import stockNews from "images/ai-page/mastra-gold-news-2.png";
+import stockWorkflows from "images/ai-page/mastra-spy-workflow-3.png";
 
 
 export default function AIPage() {
