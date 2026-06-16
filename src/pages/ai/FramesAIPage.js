@@ -7,7 +7,6 @@ import pixelDragon from 'images/pixel-animations/pixel-dragon.gif';
 //import stockNews from "images/ai-page/mastra-gold-news-2.png";
 import frames1 from "@/images/frames-ai-page/man-1.png";
 import frames2 from "@/images/frames-ai-page/man-1.png";
-import stockWorkflows from "images/ai-page/mastra-spy-workflow-3.png";
 
 
 export default function AIPage() {
@@ -69,5 +68,4 @@ export default function AIPage() {
         </div>
     );
 }
-
 
