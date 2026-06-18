@@ -20,8 +20,6 @@
   },
   "homepage": "https://www.cbombs.com",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
@@ -46,7 +44,6 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0",
-    "gh-pages": "^6.3.0"
+    "@craco/craco": "^7.1.0"
   }
 }
