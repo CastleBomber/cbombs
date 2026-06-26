@@ -1,135 +1,155 @@
 import { useState } from 'react';
-import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { LuBrain } from "react-icons/lu";
+import { Nav, Offcanvas } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
+import { LuBrain } from 'react-icons/lu';
 import { SiEthereum } from 'react-icons/si';
-import { GiFilmStrip } from 'react-icons/gi';
-import { GiVrHeadset } from "react-icons/gi";
+import { GiFilmStrip, GiVrHeadset } from 'react-icons/gi';
+import {
+  ChevronDown,
+  ChevronRight,
+  House,
+  Menu,
+} from 'lucide-react';
 import profileImg from '../images/header/r13-cbombs.png';
-import { ChevronRight, ChevronDown } from 'lucide-react';
+
+const mainLinks = [
+  { to: '/', label: 'Home', icon: House },
+  { to: '/crypto', label: 'Crypto', icon: SiEthereum },
+  { to: '/vrpage', label: 'VR', icon: GiVrHeadset },
+  { to: '/animations', label: 'Animations', icon: GiFilmStrip },
+];
+
+const aiLinks = [
+  { to: '/ai/stocksaipage', label: 'Stocks AI' },
+  { to: '/ai/framesaipage', label: 'Frames AI' },
+];
 
 const NavBar = () => {
+  const { pathname } = useLocation();
   const [show, setShow] = useState(false);
-  const [showAIProjects, setShowAIProjects] = useState(false);
+  const [showAIProjects, setShowAIProjects] = useState(
+    pathname.startsWith('/ai/'),
+  );
+
+  const closeMenu = () => setShow(false);
 
   return (
-    /* ██████████████████████████████████████████████████████████████████ */
-    /*                            NAVBAR ROOT                             */
-    /* ██████████████████████████████████████████████████████████████████ */
-    <Navbar expand={false} className="custom-navbar">
-      <Container className="d-flex justify-content-between align-items-center">
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-          <img
-            src={profileImg}
-            alt="Profile"
-            className="navbar-profile-img me-2"
-          />
-        </Navbar.Brand>
+    <header className="floating-nav">
+      <button
+        type="button"
+        className="menu-trigger"
+        aria-label="Open navigation"
+        aria-controls="portfolio-navigation"
+        aria-expanded={show}
+        onClick={() => setShow(true)}
+      >
+        <Menu aria-hidden="true" size={25} />
+      </button>
 
-        {/* ██████████████████████████████████████████████████████████████ */
-        /*                         TOGGLE BUTTON                          */
-        /* ██████████████████████████████████████████████████████████████ */}
-        <Navbar.Toggle
-          aria-controls="offcanvasNavbar"
-          onClick={() => setShow(true)}
-          className="border-0 custom-toggler"
-        />
-      </Container>
-
-      {/* ████████████████████████████████████████████████████████████████ */
-      /*                         SIDE NAVBAR                               */
-      /* ████████████████████████████████████████████████████████████████ */}
       <Offcanvas
         show={show}
-        onHide={() => setShow(false)}
+        onHide={closeMenu}
         placement="end"
-        className="custom-offcanvas"
-        id="offcanvasNavbar"
+        className="portfolio-offcanvas"
+        id="portfolio-navigation"
+        aria-labelledby="portfolio-navigation-title"
       >
-        {/* ██████████████████████████████████████████████████████████████ */
-        /*                           SIDEBAR HEADER                        */
-        /* ██████████████████████████████████████████████████████████████ */}
         <Offcanvas.Header closeButton closeVariant="white">
-          <Offcanvas.Title className="w-100 text-center sidebar-title">
-            Projects
+          <Offcanvas.Title id="portfolio-navigation-title" className="visually-hidden">
+            Portfolio navigation
           </Offcanvas.Title>
         </Offcanvas.Header>
 
-        {/* ██████████████████████████████████████████████████████████████ */
-        /*                         NAVIGATION LINKS                       */
-        /* ██████████████████████████████████████████████████████████████ */}
-        <Offcanvas.Body className="pt-0">
-          <Nav className="flex-column">
-
-            {/* ===== AI SECTION ===== */}
-            <div className="sidebar-group">
-
-              <button
-                className="sidebar-link sidebar-expand-btn"
-                onClick={() => setShowAIProjects(!showAIProjects)}
-              >
-                <span className="sidebar-arrow">
-                  {showAIProjects ? (
-                    <ChevronDown size={18} />
-                  ) : (
-                    <ChevronRight size={18} />
-                  )}
-                </span>
-
-                <span className="sidebar-label">
-                  AI
-                  <LuBrain size={22} />
-                </span>
-              </button>
-
-              {showAIProjects && (
-                <div className="sidebar-submenu">
-                  <Nav.Link
-                    as={Link}
-                    to="/ai/stocksaipage"
-                    onClick={() => setShow(false)}
-                    className="sidebar-sublink"
-                  >
-                    Stocks AI
-                  </Nav.Link>
-
-                  <Nav.Link
-                    as={Link}
-                    to="/ai/framesaipage"
-                    onClick={() => setShow(false)}
-                    className="sidebar-sublink"
-                  >
-                    Frames AI
-                  </Nav.Link>
-                </div>
-              )}
+        <Offcanvas.Body>
+          <div className="drawer-brand">
+            <img src={profileImg} alt="" className="drawer-profile" />
+            <div>
+              <p className="drawer-eyebrow">CastleBomber</p>
+              <p className="drawer-heading">Projects</p>
             </div>
+          </div>
 
-            {/* ===== CRYPTO SECTION ===== */}
-            <Nav.Link as={Link} to="/crypto" onClick={() => setShow(false)}
-              className="text-light sidebar-link">
-              Crypto
-              <SiEthereum size={22} />
-            </Nav.Link>
+          <Nav as="nav" aria-label="Main navigation" className="drawer-nav flex-column">
+            <ul className="drawer-list">
+              <li className="drawer-item" style={{ '--item-index': 0 }}>
+                <Nav.Link
+                  as={Link}
+                  to="/"
+                  onClick={closeMenu}
+                  aria-current={pathname === '/' ? 'page' : undefined}
+                  className={`drawer-link ${pathname === '/' ? 'is-active' : ''}`}
+                >
+                  <span>Home</span>
+                  <House aria-hidden="true" size={21} />
+                </Nav.Link>
+              </li>
 
-            {/* ===== VR SECTION ===== */}
-            <Nav.Link as={Link} to="/vrpage" onClick={() => setShow(false)}
-              className="text-light sidebar-link">
-              VR
-              <GiVrHeadset size={22} />
-            </Nav.Link>
+              <li className="drawer-item" style={{ '--item-index': 1 }}>
+                <button
+                  type="button"
+                  className={`drawer-link drawer-expand ${pathname.startsWith('/ai/') ? 'is-active' : ''}`}
+                  aria-expanded={showAIProjects}
+                  aria-controls="ai-project-links"
+                  onClick={() => setShowAIProjects((current) => !current)}
+                >
+                  <span className="drawer-expand-label">
+                    {showAIProjects ? (
+                      <ChevronDown aria-hidden="true" size={17} />
+                    ) : (
+                      <ChevronRight aria-hidden="true" size={17} />
+                    )}
+                    AI
+                  </span>
+                  <LuBrain aria-hidden="true" size={22} />
+                </button>
 
-            {/* ===== ANIMATIONS SECTION ===== */}
-            <Nav.Link as={Link} to="/animations" onClick={() => setShow(false)}
-              className="text-light sidebar-link">
-              Animations
-              <GiFilmStrip size={22} />
-            </Nav.Link>
+                {showAIProjects && (
+                  <ul id="ai-project-links" className="drawer-submenu">
+                    {aiLinks.map((link) => (
+                      <li key={link.to}>
+                        <Nav.Link
+                          as={Link}
+                          to={link.to}
+                          onClick={closeMenu}
+                          aria-current={pathname === link.to ? 'page' : undefined}
+                          className={`drawer-sublink ${pathname === link.to ? 'is-active' : ''}`}
+                        >
+                          {link.label}
+                        </Nav.Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
 
+              {mainLinks.slice(1).map((link, index) => {
+                const Icon = link.icon;
+                const active = pathname === link.to;
+
+                return (
+                  <li
+                    key={link.to}
+                    className="drawer-item"
+                    style={{ '--item-index': index + 2 }}
+                  >
+                    <Nav.Link
+                      as={Link}
+                      to={link.to}
+                      onClick={closeMenu}
+                      aria-current={active ? 'page' : undefined}
+                      className={`drawer-link ${active ? 'is-active' : ''}`}
+                    >
+                      <span>{link.label}</span>
+                      <Icon aria-hidden="true" size={22} />
+                    </Nav.Link>
+                  </li>
+                );
+              })}
+            </ul>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
-    </Navbar>
+    </header>
   );
 };
 

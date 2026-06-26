@@ -18,7 +18,8 @@ export default function Home() {
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect();
                 const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
-                const visibleRatio = Math.max(0, Math.min(1, visibleHeight / viewportHeight));
+                const opacityRange = Math.min(rect.height, viewportHeight);
+                const visibleRatio = Math.max(0, Math.min(1, visibleHeight / opacityRange));
                 section.style.opacity = visibleRatio;
             });
             ticking = false;
@@ -83,6 +84,7 @@ export default function Home() {
             <section className="scroll-section footer-wrapper">
                 <footer>
                     <Footer
+                        showContact
                         iconLinks={[
                             { href: "https://github.com/CastleBomber", icon: <FaGithub />, label: "GitHub" },
                             { href: "https://youtube.com/@CastleBomber", icon: <FaYoutube />, label: "YouTube" },
