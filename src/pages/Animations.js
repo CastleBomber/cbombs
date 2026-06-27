@@ -5,8 +5,8 @@ import flyingDragon from '../images/pixel-animations/purple-dragon-transparent.g
 const animationProjects = [
     {
         title: 'Dance Battle',
-        label: 'ToonBoom animated short',
-        description: 'A battle with the dragon king to save the moon.',
+        label: 'ToonBoom animation',
+        description: 'To save the moon, our hero must dance battle the Dragon King.',
         embedUrl: 'https://www.youtube.com/embed/FTwJMREWtgM?rel=0',
     },
     {
@@ -21,14 +21,13 @@ export default function Animations() {
     return (
         <div className="web-page animations-page">
             <header className="animations-hero">
-                <p className="animations-kicker">Animated worlds in motion</p>
                 <div className="pixel-header-row">
                     <img src={pixelAngel} alt="" className="pixel-angel" aria-hidden="true" />
                     <h1>Animation Projects</h1>
                     <img src={pixelDragon} alt="" className="pixel-dragon" aria-hidden="true" />
                 </div>
                 <p className="animations-intro">
-                    Angels and dragons inspired animations.
+                    Angels and dragons inspired animations
                 </p>
             </header>
 

@@ -897,24 +897,22 @@ iframe {
   height: 20rem;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 115%, rgba(245, 201, 90, 0.16), transparent 44%),
-    linear-gradient(180deg, rgba(20, 6, 48, 0.04), rgba(53, 16, 111, 0.48));
+    radial-gradient(ellipse at 50% 115%, rgba(245, 201, 90, 0.16), transparent 48%),
+    linear-gradient(180deg, transparent, rgba(108, 43, 207, 0.16));
   isolation: isolate;
 }
 
-.animation-flight-footer::after {
+.animation-flight-footer::before {
   position: absolute;
-  right: 0;
-  left: 0;
+  top: 0;
+  left: 50%;
+  width: calc(100% - clamp(2.5rem, 8vw, 8rem));
+  max-width: 1280px;
+  height: 1px;
   content: "";
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.44), rgba(245, 201, 90, 0.78), rgba(255, 255, 255, 0.44), transparent);
   pointer-events: none;
-}
-
-.animation-flight-footer::after {
-  bottom: 0;
-  height: 45%;
-  background: linear-gradient(180deg, transparent, rgba(20, 6, 48, 0.4));
-  z-index: -1;
+  transform: translateX(-50%);
 }
 
 .animation-flight-path {
