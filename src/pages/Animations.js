@@ -1,4 +1,3 @@
-import { ExternalLink } from 'lucide-react';
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import flyingDragon from '../images/pixel-animations/purple-dragon-transparent.gif';
@@ -6,15 +5,15 @@ import flyingDragon from '../images/pixel-animations/purple-dragon-transparent.g
 const animationProjects = [
     {
         title: 'Dance Battle',
+        label: 'Toon Boom animated short',
         description: 'A battle with the dragon king to save the moon.',
         embedUrl: 'https://www.youtube.com/embed/FTwJMREWtgM?rel=0',
-        watchUrl: 'https://www.youtube.com/watch?v=FTwJMREWtgM',
     },
     {
         title: "Attack On Dragon's Gate",
-        description: "Our hero's quest to save the moon begins.",
+        label: 'Raspberry Pi animation',
+        description: "A Raspberry Pi-powered LED matrix tale where our hero's quest to save the moon begins.",
         embedUrl: 'https://www.youtube.com/embed/Z1V8u2KOXhs?rel=0',
-        watchUrl: 'https://www.youtube.com/watch?v=Z1V8u2KOXhs',
     },
 ];
 
@@ -31,18 +30,12 @@ export default function Animations() {
                 <p className="animations-intro">
                     Heroes, dragons, and moonlit worlds brought to life one frame at a time.
                 </p>
-                <div className="animations-hero-rule" aria-hidden="true">
-                    <span />
-                </div>
             </header>
 
             <main className="animations-gallery">
-                {animationProjects.map((project, index) => (
+                {animationProjects.map((project) => (
                     <article className="animation-project" key={project.title}>
                         <div className="animation-project-media">
-                            <span className="animation-project-number" aria-hidden="true">
-                                {String(index + 1).padStart(2, '0')}
-                            </span>
                             <div className="animation-video-frame">
                                 <iframe
                                     src={project.embedUrl}
@@ -56,18 +49,9 @@ export default function Animations() {
                         </div>
 
                         <div className="animation-project-copy">
-                            <p className="animation-project-label">Original animated short</p>
+                            <p className="animation-project-label">{project.label}</p>
                             <h2>{project.title}</h2>
                             <p className="animation-project-description">{project.description}</p>
-                            <a
-                                className="animation-watch-link"
-                                href={project.watchUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Watch on YouTube
-                                <ExternalLink size={16} aria-hidden="true" />
-                            </a>
                         </div>
                     </article>
                 ))}
