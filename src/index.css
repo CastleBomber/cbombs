@@ -899,23 +899,15 @@ iframe {
   background:
     radial-gradient(ellipse at 50% 115%, rgba(245, 201, 90, 0.16), transparent 44%),
     linear-gradient(180deg, rgba(20, 6, 48, 0.04), rgba(53, 16, 111, 0.48));
-  border-top: 1px solid rgba(245, 201, 90, 0.36);
   isolation: isolate;
 }
 
-.animation-flight-footer::before,
 .animation-flight-footer::after {
   position: absolute;
   right: 0;
   left: 0;
   content: "";
   pointer-events: none;
-}
-
-.animation-flight-footer::before {
-  top: 27%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.26), transparent);
 }
 
 .animation-flight-footer::after {
