@@ -1,7 +1,6 @@
-import { FaGithub, FaYoutube, FaTiktok } from 'react-icons/fa';
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
-import Footer from '../components/Footer';
+import flyingDragon from '../images/pixel-animations/purple-dragon-transparent.gif';
 import { useEffect } from 'react';
 
 export default function Home() {
@@ -82,15 +81,10 @@ export default function Home() {
 
             {/* FOOTER */}
             <section className="scroll-section footer-wrapper">
-                <footer>
-                    <Footer
-                        showContact
-                        iconLinks={[
-                            { href: "https://github.com/CastleBomber", icon: <FaGithub />, label: "GitHub" },
-                            { href: "https://youtube.com/@CastleBomber", icon: <FaYoutube />, label: "YouTube" },
-                            { href: "https://tiktok.com/@CastleBomber", icon: <FaTiktok />, label: "TikTok" }
-                        ]}
-                    />
+                <footer className="animation-flight-footer" aria-label="Flying dragon animation">
+                    <div className="animation-flight-path" aria-hidden="true">
+                        <img src={flyingDragon} alt="" className="animation-footer-dragon" />
+                    </div>
                 </footer>
             </section>
         </div>

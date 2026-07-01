@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Nav, Offcanvas } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
+import { FaGithub, FaTiktok, FaYoutube } from 'react-icons/fa';
 import { LuBrain } from 'react-icons/lu';
 import { SiEthereum } from 'react-icons/si';
 import { GiFilmStrip, GiVrHeadset } from 'react-icons/gi';
@@ -8,6 +9,7 @@ import {
   ChevronDown,
   ChevronRight,
   House,
+  Mail,
   Menu,
 } from 'lucide-react';
 import profileImg from '../images/header/r13-cbombs.png';
@@ -17,11 +19,18 @@ const mainLinks = [
   { to: '/crypto', label: 'Crypto', icon: SiEthereum },
   { to: '/vrpage', label: 'VR', icon: GiVrHeadset },
   { to: '/animations', label: 'Animations', icon: GiFilmStrip },
+  { to: '/contact', label: 'Contact', icon: Mail },
 ];
 
 const aiLinks = [
   { to: '/ai/stocksaipage', label: 'Stocks AI' },
   { to: '/ai/framesaipage', label: 'Frames AI' },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/CastleBomber', icon: <FaGithub aria-hidden="true" />, label: 'GitHub' },
+  { href: 'https://youtube.com/@CastleBomber', icon: <FaYoutube aria-hidden="true" />, label: 'YouTube' },
+  { href: 'https://tiktok.com/@CastleBomber', icon: <FaTiktok aria-hidden="true" />, label: 'TikTok' },
 ];
 
 const NavBar = () => {
@@ -64,8 +73,8 @@ const NavBar = () => {
           <div className="drawer-brand">
             <img src={profileImg} alt="" className="drawer-profile" />
             <div>
-              <p className="drawer-eyebrow">CastleBomber</p>
-              <p className="drawer-heading">Projects</p>
+              <p className="drawer-heading">CastleBomber Studios</p>
+              <p className="drawer-quote">"Software for all"</p>
             </div>
           </div>
 
@@ -147,6 +156,20 @@ const NavBar = () => {
               })}
             </ul>
           </Nav>
+          <div className="drawer-footer" aria-label="Social links">
+            {socialLinks.map(({ href, icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="drawer-social-link"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </header>

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Crypto from './pages/Crypto';
 import Animations from './pages/Animations';
 import VRPage from './pages/VRPage';
+import Contact from './pages/Contact';
 //import AIPage from './pages/ai/FramesAIPage';
 import FramesAIPage from './pages/ai/FramesAIPage';
 import StocksAIPage from './pages/ai/StocksAIPage';
@@ -24,6 +25,7 @@ function App() {
             <Route path="/crypto" element={<Crypto />} />
             <Route path="/animations" element={<Animations />} />
             <Route path="/vrpage" element={<VRPage />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>
