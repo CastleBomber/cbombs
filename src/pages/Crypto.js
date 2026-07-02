@@ -1,6 +1,6 @@
-import { FaGithub } from 'react-icons/fa';
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../components/Footer';
+import HeaderDivider from '../components/HeaderDivider';
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import crypto1 from "../images/crypto-page/crypto-1.jpg";
@@ -46,6 +46,7 @@ export default function Crypto() {
                         className="pixel-dragon"
                     />
                 </div>
+                <HeaderDivider />
             </header>
 
             <main>
@@ -72,15 +73,7 @@ export default function Crypto() {
                 </Carousel>
             </main>
 
-            <Footer
-                iconLinks={[
-                    {
-                        href: "https://github.com/CastleBomber/web-pages-unleashed/tree/feature/holesky-testnet",
-                        icon: <FaGithub />,
-                        label: "GitHub"
-                    }
-                ]}
-            />
+            <Footer />
         </div>
     );
 }

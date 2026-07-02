@@ -1,6 +1,7 @@
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import flyingDragon from '../images/pixel-animations/purple-dragon-transparent.gif';
+import HeaderDivider from '../components/HeaderDivider';
 
 const animationProjects = [
     {
@@ -26,6 +27,7 @@ export default function Animations() {
                     <h1>Animation Projects</h1>
                     <img src={pixelDragon} alt="" className="pixel-dragon" aria-hidden="true" />
                 </div>
+                <HeaderDivider />
                 <p className="animations-intro">
                     Angels and dragons inspired animations
                 </p>

@@ -1,6 +1,6 @@
-import { FaGithub } from 'react-icons/fa';
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from '../../components/Footer';
+import HeaderDivider from '../../components/HeaderDivider';
 import pixelAngel from 'images/pixel-animations/pixel-angel.gif';
 import pixelDragon from 'images/pixel-animations/pixel-dragon.gif';
 //import stockPrices from "images/ai-page/mastra-spy-prices-1.png";
@@ -33,6 +33,7 @@ export default function AIPage() {
                     <h1>AI Projects</h1>
                     <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                 </div>
+                <HeaderDivider />
             </header>
 
             <main>
@@ -60,12 +61,7 @@ export default function AIPage() {
                 </Carousel>
             </main>
 
-            <Footer
-                iconLinks={[
-                    { href: "https://github.com/CastleBomber/stocks-ai", icon: <FaGithub />, label: "GitHub" }
-                ]}
-            />
+            <Footer />
         </div>
     );
 }
-

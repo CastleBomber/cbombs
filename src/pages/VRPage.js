@@ -1,8 +1,8 @@
-import { FaGithub } from 'react-icons/fa';
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import capstone1 from "../images/capstone-page/capstone-poster.jpg";
 import Footer from '../components/Footer';
+import HeaderDivider from '../components/HeaderDivider';
 
 export default function VRPage() {
     return (
@@ -13,6 +13,7 @@ export default function VRPage() {
                     <h1>VR Projects</h1>
                     <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                 </div>
+                <HeaderDivider />
             </header>
 
             <main>
@@ -36,11 +37,7 @@ export default function VRPage() {
                 <p>VR spiritual fantasy experience seeking emulating  flying into the gates of heaven</p>
             </main>
 
-            <Footer
-                iconLinks={[
-                    { href: "https://github.com/CastleBomber/Heavens-Gate-VR", icon: <FaGithub />, label: "GitHub" }
-                ]}
-            />
+            <Footer />
         </div>
     );
 }

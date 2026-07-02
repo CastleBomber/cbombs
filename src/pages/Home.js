@@ -1,6 +1,7 @@
 import pixelAngel from '../images/pixel-animations/pixel-angel.gif';
 import pixelDragon from '../images/pixel-animations/pixel-dragon.gif';
 import flyingDragon from '../images/pixel-animations/purple-dragon-transparent.gif';
+import HeaderDivider from '../components/HeaderDivider';
 import { useEffect } from 'react';
 
 export default function Home() {
@@ -55,6 +56,7 @@ export default function Home() {
                         <h1 className='special-border'>Welcome</h1>
                         <img src={pixelDragon} alt="Pixel Dragon" className="pixel-dragon" />
                     </div>
+                    <HeaderDivider />
                 </header>
             </section>
 
