@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                               GLOBAL STYLES                              */
 /* ████████████████████████████████████████████████████████████████████████ */
@@ -6,6 +8,7 @@
   --theme-purple-deep: #35106f;
   --theme-gold: #f5c95a;
   --theme-white: #fff;
+  --font-pixel: 'Press Start 2P', system-ui, sans-serif;
 }
 
 * {
@@ -71,7 +74,10 @@ body {
 .web-page h1 {
   color: var(--theme-white);
   text-align: center;
-  font-size: 3rem;
+  font-family: var(--font-pixel);
+  font-size: 2.15rem;
+  line-height: 1.45;
+  letter-spacing: 0;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 0 var(--theme-purple-deep), 0 0 1.5rem rgba(108, 43, 207, 0.5);
@@ -623,7 +629,8 @@ article {
 }
 
 .contact-page-hero h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: 2.8rem;
+  line-height: 1.45;
 }
 
 .contact-page-main {
@@ -916,7 +923,7 @@ iframe {
 }
 
 .animations-page .pixel-header-row h1 {
-  font-size: 3.6rem;
+  font-size: 2.5rem;
   text-shadow: 0 3px 0 var(--theme-purple-deep), 0 0 2rem rgba(108, 43, 207, 0.72);
 }
 
@@ -1092,7 +1099,8 @@ iframe {
   }
 
   .animations-page .pixel-header-row h1 {
-    font-size: 2.65rem;
+    font-size: 1.75rem;
+    line-height: 1.55;
   }
 
   .animations-gallery {
@@ -1131,7 +1139,7 @@ iframe {
   }
 
   .animations-page .pixel-header-row h1 {
-    font-size: 2.1rem;
+    font-size: 1.35rem;
   }
 
   .animations-page .animations-intro {
@@ -1207,9 +1215,11 @@ iframe {
 }
 
 .hero-content h1.special-border {
-  font-size: clamp(4rem, 10vw, 8rem); /* bigger than before */
+  font-family: var(--font-pixel);
+  font-size: 4.6rem;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.45;
+  letter-spacing: 0;
 }
 
 @keyframes fadeIn {
@@ -1230,11 +1240,21 @@ iframe {
   }
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
+    line-height: 1.5;
   }
 
   h2 {
     font-size: 1.4rem;
+  }
+
+  .hero-content h1.special-border {
+    font-size: 2.4rem;
+    line-height: 1.55;
+  }
+
+  .contact-page-hero h1 {
+    font-size: 2rem;
   }
 
   .pixel-header-row {
@@ -1344,6 +1364,14 @@ iframe {
 @media (max-width: 480px) {
   :root {
     font-size: 13px;
+  }
+
+  .hero-content h1.special-border {
+    font-size: 1.65rem;
+  }
+
+  .contact-page-hero h1 {
+    font-size: 1.55rem;
   }
 
   .pixel-header-row {
