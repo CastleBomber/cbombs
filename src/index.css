@@ -1419,3 +1419,14 @@ iframe {
   /* ████████████████████████████████████████████████████████████████████████ */
 
 }
+
+/* Full-site pixel typography. */
+body,
+body *,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-pixel) !important;
+  letter-spacing: 0;
+}
