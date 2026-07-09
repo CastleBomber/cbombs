@@ -107,7 +107,7 @@ header {
   min-height: 80px;
   padding-top: 4rem;
   padding-bottom: 7rem;
-  transition: opacity 0.8s ease;
+  transition: opacity 1.6s ease;
 }
 
 main {
@@ -268,8 +268,8 @@ article {
 .drawer-item {
   opacity: 0;
   transform: translateX(1rem);
-  animation: drawer-item-enter 360ms ease-out forwards;
-  animation-delay: calc(var(--item-index) * 45ms + 80ms);
+  animation: drawer-item-enter 720ms ease-out forwards;
+  animation-delay: calc(var(--item-index) * 90ms + 160ms);
 }
 
 .portfolio-offcanvas .drawer-link {
@@ -1476,7 +1476,7 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.7s ease;
+  transition: opacity 1.4s ease;
 }
 
 .scroll-section.footer-wrapper {
@@ -1527,23 +1527,23 @@ iframe {
 }
 
 .home-hero .special-border {
-  animation: homeHeroTitleIn 900ms ease-out 160ms forwards;
+  animation: homeHeroTitleIn 1800ms ease-out 320ms forwards;
 }
 
 .home-hero-divider .header-gold-divider-mark {
-  animation: homeHeroMarkIn 900ms ease-out 230ms forwards;
+  animation: homeHeroMarkIn 1800ms ease-out 460ms forwards;
 }
 
 .home-hero .pixel-angel {
-  animation: homeHeroAngelIn 900ms ease-out 980ms forwards;
+  animation: homeHeroAngelIn 1800ms ease-out 1960ms forwards;
 }
 
 .home-hero .pixel-dragon {
-  animation: homeHeroDragonIn 900ms ease-out 1060ms forwards;
+  animation: homeHeroDragonIn 1800ms ease-out 2120ms forwards;
 }
 
 .home-hero-divider .header-gold-divider-line {
-  animation: homeHeroLineReveal 1100ms cubic-bezier(0.22, 1, 0.36, 1) 1750ms forwards;
+  animation: homeHeroLineReveal 2200ms cubic-bezier(0.22, 1, 0.36, 1) 3500ms forwards;
   transform: scaleX(0);
 }
 
