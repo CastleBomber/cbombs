@@ -1091,6 +1091,221 @@ article {
 }
 
 /* ████████████████████████████████████████████████████████████████████████ */
+/*                                FRAMES AI PAGE                            */
+/* ████████████████████████████████████████████████████████████████████████ */
+.frames-page {
+  --frames-panel: rgba(20, 6, 48, 0.5);
+  --frames-line: rgba(245, 201, 90, 0.62);
+}
+
+.frames-hero {
+  position: relative;
+  min-height: 28rem;
+  padding: 8rem 6vw 3.5rem;
+  overflow: hidden;
+  text-align: center;
+  isolation: isolate;
+}
+
+.frames-hero::before {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  z-index: -1;
+  width: 42rem;
+  max-width: 92vw;
+  height: 23rem;
+  content: "";
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(255, 255, 255, 0.14), transparent 22%),
+    radial-gradient(ellipse, rgba(245, 201, 90, 0.22) 0%, rgba(108, 43, 207, 0.28) 44%, transparent 74%);
+  filter: blur(14px);
+  transform: translateX(-50%);
+}
+
+.frames-hero .pixel-header-row {
+  max-width: 72rem;
+}
+
+.frames-hero .pixel-header-row h1 {
+  font-size: 2.7rem;
+  text-shadow: 0 3px 0 var(--theme-purple-deep), 0 0 2rem rgba(108, 43, 207, 0.72);
+}
+
+.frames-intro {
+  max-width: 46rem;
+  margin: 1.6rem auto 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-shadow: 0 2px 1rem rgba(20, 6, 48, 0.9);
+}
+
+.frames-signal-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 44rem);
+  margin: 2.4rem auto 0;
+}
+
+.frames-signal {
+  min-height: 5.4rem;
+  padding: 1rem 0.75rem;
+  background: rgba(20, 6, 48, 0.42);
+  border: 1px solid rgba(245, 201, 90, 0.42);
+  border-radius: 8px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.14), 0 1rem 2.5rem rgba(20, 6, 48, 0.22);
+}
+
+.frames-signal span {
+  display: block;
+  color: var(--theme-gold);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.frames-signal p,
+.frames-page .frames-signal p {
+  margin: 0.55rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.56rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.frames-main {
+  width: min(100%, 92rem);
+  margin: 0 auto;
+  padding: 0 6vw 9rem;
+}
+
+.frames-carousel-shell {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(108, 43, 207, 0.28)),
+    rgba(20, 6, 48, 0.26);
+  border: 1px solid var(--frames-line);
+  border-radius: 8px;
+  box-shadow: 0 2rem 5rem rgba(20, 6, 48, 0.58), 0 0 2rem rgba(108, 43, 207, 0.2);
+}
+
+.frames-carousel-shell::before {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  content: "";
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.frames-slide {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.25rem;
+  min-height: 36rem;
+  padding: clamp(1rem, 2vw, 1.4rem) clamp(1rem, 2.5vw, 2rem) 4.8rem;
+}
+
+.frames-slide-label {
+  justify-self: start;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  color: var(--theme-gold);
+  font-size: 0.58rem;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+  background: rgba(20, 6, 48, 0.5);
+  border: 1px solid rgba(245, 201, 90, 0.48);
+  border-radius: 8px;
+}
+
+.frames-slide-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.85fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.frames-slide-frame {
+  justify-self: center;
+  width: min(100%, 32rem);
+  padding: 0.65rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  box-shadow: 0 1.25rem 3rem rgba(20, 6, 48, 0.48);
+}
+
+.frames-slide-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.frames-slide-copy {
+  max-width: 34rem;
+  text-align: left;
+}
+
+.frames-slide-copy h2 {
+  margin: 0 0 0.8rem;
+  color: var(--theme-gold);
+  font-size: 1.25rem;
+  line-height: 1.55;
+  text-shadow: 0 2px 0 var(--theme-purple-deep), 0 0 1rem rgba(108, 43, 207, 0.58);
+}
+
+.frames-slide-copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.72rem;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.frames-carousel .carousel-control-prev,
+.frames-carousel .carousel-control-next {
+  width: 4rem;
+  opacity: 0.9;
+}
+
+.frames-carousel .carousel-control-prev-icon,
+.frames-carousel .carousel-control-next-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(53, 16, 111, 0.78);
+  background-size: 54%;
+  border: 1px solid rgba(245, 201, 90, 0.72);
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(108, 43, 207, 0.42);
+}
+
+.frames-carousel .carousel-indicators {
+  bottom: 1.25rem;
+  gap: 0.55rem;
+  margin-bottom: 0;
+}
+
+.frames-carousel .carousel-indicators [data-bs-target] {
+  width: 2.2rem;
+  height: 0.34rem;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.46);
+  border: 0;
+  border-radius: 999px;
+  opacity: 1;
+}
+
+.frames-carousel .carousel-indicators .active {
+  background-color: var(--theme-gold);
+  box-shadow: 0 0 0.75rem rgba(245, 201, 90, 0.68);
+}
+
+/* ████████████████████████████████████████████████████████████████████████ */
 /*                              BACKGROUND VIDEO                            */
 /* ████████████████████████████████████████████████████████████████████████ */
 .background-video {
@@ -1351,11 +1566,13 @@ iframe {
 }
 
 @media (max-width: 900px) {
-  .stocks-hero .pixel-header-row h1 {
+  .stocks-hero .pixel-header-row h1,
+  .frames-hero .pixel-header-row h1 {
     font-size: 2.15rem;
   }
 
-  .stocks-signal-strip {
+  .stocks-signal-strip,
+  .frames-signal-strip {
     width: min(100%, 38rem);
   }
 
@@ -1367,6 +1584,18 @@ iframe {
     max-height: 27rem;
   }
 
+  .frames-slide {
+    min-height: 32rem;
+  }
+
+  .frames-slide-layout {
+    grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1fr);
+  }
+
+  .frames-slide-frame {
+    width: min(100%, 25rem);
+  }
+
   .animation-project,
   .animation-project:nth-child(even) {
     grid-template-columns: minmax(0, 1.45fr) minmax(13rem, 0.7fr);
@@ -1375,30 +1604,36 @@ iframe {
 }
 
 @media (max-width: 700px) {
-  .stocks-hero {
+  .stocks-hero,
+  .frames-hero {
     min-height: 29rem;
     padding: 7rem 5vw 3.5rem;
   }
 
-  .stocks-hero .pixel-header-row h1 {
+  .stocks-hero .pixel-header-row h1,
+  .frames-hero .pixel-header-row h1 {
     font-size: 1.65rem;
     line-height: 1.55;
   }
 
-  .stocks-intro {
+  .stocks-intro,
+  .frames-intro {
     font-size: 0.72rem;
   }
 
-  .stocks-signal-strip {
+  .stocks-signal-strip,
+  .frames-signal-strip {
     grid-template-columns: 1fr;
     max-width: 24rem;
   }
 
-  .stocks-signal {
+  .stocks-signal,
+  .frames-signal {
     min-height: 0;
   }
 
-  .stocks-main {
+  .stocks-main,
+  .frames-main {
     padding: 0 5vw 7rem;
   }
 
@@ -1419,8 +1654,39 @@ iframe {
     font-size: 0.62rem;
   }
 
+  .frames-slide {
+    min-height: 0;
+    padding-bottom: 4.5rem;
+  }
+
+  .frames-slide-layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .frames-slide-frame {
+    width: min(100%, 21rem);
+  }
+
+  .frames-slide-copy {
+    max-width: 30rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .frames-slide-copy h2 {
+    font-size: 0.92rem;
+  }
+
+  .frames-slide-copy p {
+    font-size: 0.62rem;
+    text-align: center;
+  }
+
   .stocks-carousel .carousel-control-prev,
-  .stocks-carousel .carousel-control-next {
+  .stocks-carousel .carousel-control-next,
+  .frames-carousel .carousel-control-prev,
+  .frames-carousel .carousel-control-next {
     width: 3rem;
   }
 
@@ -1465,21 +1731,25 @@ iframe {
 }
 
 @media (max-width: 480px) {
-  .stocks-hero .pixel-header-row h1 {
+  .stocks-hero .pixel-header-row h1,
+  .frames-hero .pixel-header-row h1 {
     font-size: 1.25rem;
   }
 
-  .stocks-carousel-shell {
+  .stocks-carousel-shell,
+  .frames-carousel-shell {
     padding: 0.65rem;
   }
 
-  .stock-slide {
+  .stock-slide,
+  .frames-slide {
     gap: 0.85rem;
     min-height: 26rem;
     padding: 0.65rem 0.55rem 4rem;
   }
 
-  .stock-slide-label {
+  .stock-slide-label,
+  .frames-slide-label {
     font-size: 0.5rem;
   }
 
@@ -1487,8 +1757,14 @@ iframe {
     max-height: 17rem;
   }
 
+  .frames-slide-frame {
+    width: min(100%, 18rem);
+  }
+
   .stocks-carousel .carousel-control-prev-icon,
-  .stocks-carousel .carousel-control-next-icon {
+  .stocks-carousel .carousel-control-next-icon,
+  .frames-carousel .carousel-control-prev-icon,
+  .frames-carousel .carousel-control-next-icon {
     width: 2rem;
     height: 2rem;
   }
