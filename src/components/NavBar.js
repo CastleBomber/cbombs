@@ -19,8 +19,9 @@ const mainLinks = [
   { to: '/crypto', label: 'Crypto', icon: SiEthereum },
   { to: '/vrpage', label: 'VR', icon: GiVrHeadset },
   { to: '/animations', label: 'Animations', icon: GiFilmStrip },
-  { to: '/contact', label: 'Contact', icon: Mail },
 ];
+
+const contactLink = { to: '/contact', label: 'Contact', icon: Mail };
 
 const aiLinks = [
   { to: '/ai/stocksaipage', label: 'Stocks AI' },
@@ -156,6 +157,21 @@ const NavBar = () => {
               })}
             </ul>
           </Nav>
+          <div className="drawer-lower">
+            <Nav.Link
+              as={Link}
+              to={contactLink.to}
+              onClick={closeMenu}
+              aria-current={pathname === contactLink.to ? 'page' : undefined}
+              className={`drawer-contact-link ${pathname === contactLink.to ? 'is-active' : ''}`}
+            >
+              <span>
+                <span className="drawer-contact-kicker">Send a message</span>
+                <span className="drawer-contact-label">{contactLink.label}</span>
+              </span>
+              <Mail aria-hidden="true" size={21} />
+            </Nav.Link>
+          </div>
           <div className="drawer-footer" aria-label="Social links">
             {socialLinks.map(({ href, icon, label }) => (
               <a
