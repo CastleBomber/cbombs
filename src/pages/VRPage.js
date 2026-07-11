@@ -7,15 +7,15 @@ import HeaderDivider from '../components/HeaderDivider';
 const vrProjects = [
     {
         title: 'Angels and Dragons',
-        label: 'VR music festival',
-        description: 'A VR music festival concept hoping to inspire good and light through an angelic fantasy world.',
+        label: 'VR Music Festival',
+        description: 'A VR Music Festival hoping to inspire good and light into the world.',
         type: 'video',
         embedUrl: 'https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi',
     },
     {
         title: "Heaven's Gate",
-        label: 'Spiritual fantasy experience',
-        description: 'A VR fantasy experience about the feeling of flying upward into luminous gates and celestial space.',
+        label: 'Capstone Project',
+        description: 'A VR fantasy experience of climbing the stairs to heaven.',
         type: 'poster',
         image: capstone1,
         imageAlt: "Heaven's Gate capstone poster",
@@ -60,8 +60,8 @@ export default function VRPage() {
                         </div>
 
                         <div className="vr-project-copy">
-                            <p className="vr-project-label">{project.label}</p>
                             <h2>{project.title}</h2>
+                            <p className="vr-project-label">{project.label}</p>
                             <p className="vr-project-description">{project.description}</p>
                         </div>
                     </article>

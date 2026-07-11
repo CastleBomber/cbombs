@@ -76,8 +76,12 @@ export default function Home() {
                             allowfullscreen>
                         </iframe>
                     </div>
-                    <h2>  [Angels and Dragons]  </h2>
-                    <p>VR Music Festival hoping to inspire good and light into the world</p>
+                    <h2>Angels and Dragons</h2>
+                    <p>
+                        VR Music Festival
+                        <br />
+                        hoping to inspire good and light into the world
+                    </p>
                 </main>
             </section>
 
