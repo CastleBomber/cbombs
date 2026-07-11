@@ -1306,6 +1306,288 @@ article {
 }
 
 /* ████████████████████████████████████████████████████████████████████████ */
+/*                              CRYPTO + VR PAGES                           */
+/* ████████████████████████████████████████████████████████████████████████ */
+.crypto-page,
+.vr-page {
+  --project-line: rgba(245, 201, 90, 0.62);
+}
+
+.crypto-hero,
+.vr-hero {
+  position: relative;
+  min-height: 28rem;
+  padding: 8rem 6vw 3.5rem;
+  overflow: hidden;
+  text-align: center;
+  isolation: isolate;
+}
+
+.crypto-hero::before,
+.vr-hero::before {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  z-index: -1;
+  width: 44rem;
+  max-width: 92vw;
+  height: 22rem;
+  content: "";
+  background: radial-gradient(ellipse, rgba(245, 201, 90, 0.24) 0%, rgba(108, 43, 207, 0.24) 42%, transparent 72%);
+  filter: blur(14px);
+  transform: translateX(-50%);
+}
+
+.vr-hero::before {
+  background:
+    radial-gradient(ellipse at 50% 34%, rgba(255, 255, 255, 0.12), transparent 24%),
+    radial-gradient(ellipse, rgba(245, 201, 90, 0.2) 0%, rgba(108, 43, 207, 0.28) 44%, transparent 74%);
+}
+
+.crypto-hero .pixel-header-row,
+.vr-hero .pixel-header-row {
+  max-width: 72rem;
+}
+
+.crypto-hero .pixel-header-row h1,
+.vr-hero .pixel-header-row h1 {
+  font-size: 2.7rem;
+  text-shadow: 0 3px 0 var(--theme-purple-deep), 0 0 2rem rgba(108, 43, 207, 0.72);
+}
+
+.crypto-intro,
+.vr-intro {
+  max-width: 46rem;
+  margin: 1.6rem auto 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-shadow: 0 2px 1rem rgba(20, 6, 48, 0.9);
+}
+
+.crypto-signal-strip,
+.vr-signal-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 44rem);
+  margin: 2.4rem auto 0;
+}
+
+.crypto-signal,
+.vr-signal {
+  min-height: 5.4rem;
+  padding: 1rem 0.75rem;
+  background: rgba(20, 6, 48, 0.42);
+  border: 1px solid rgba(245, 201, 90, 0.42);
+  border-radius: 8px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.14), 0 1rem 2.5rem rgba(20, 6, 48, 0.22);
+}
+
+.crypto-signal span,
+.vr-signal span {
+  display: block;
+  color: var(--theme-gold);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.crypto-signal p,
+.crypto-page .crypto-signal p,
+.vr-signal p,
+.vr-page .vr-signal p {
+  margin: 0.55rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.56rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.crypto-main,
+.vr-main {
+  width: min(100%, 92rem);
+  margin: 0 auto;
+  padding: 0 6vw 9rem;
+}
+
+.crypto-carousel-shell,
+.vr-showcase {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(108, 43, 207, 0.28)),
+    rgba(20, 6, 48, 0.26);
+  border: 1px solid var(--project-line);
+  border-radius: 8px;
+  box-shadow: 0 2rem 5rem rgba(20, 6, 48, 0.58), 0 0 2rem rgba(108, 43, 207, 0.2);
+}
+
+.crypto-carousel-shell::before,
+.vr-showcase::before {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  content: "";
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.crypto-slide {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 1.25rem;
+  min-height: 42rem;
+  padding: clamp(1rem, 2vw, 1.4rem) clamp(1rem, 2.5vw, 2rem) 4.8rem;
+}
+
+.crypto-slide-label,
+.vr-project-label {
+  justify-self: start;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  color: var(--theme-gold);
+  font-size: 0.58rem;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+  background: rgba(20, 6, 48, 0.5);
+  border: 1px solid rgba(245, 201, 90, 0.48);
+  border-radius: 8px;
+}
+
+.crypto-slide-frame,
+.vr-video-frame,
+.vr-poster-frame {
+  padding: 0.55rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  box-shadow: 0 1.25rem 3rem rgba(20, 6, 48, 0.48);
+}
+
+.crypto-slide-image {
+  width: 100%;
+  height: auto;
+  max-height: 34rem;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.crypto-slide-copy {
+  width: min(100%, 52rem);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.crypto-slide-copy h2,
+.vr-project-copy h2 {
+  margin: 0 0 0.8rem;
+  color: var(--theme-gold);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  text-shadow: 0 2px 0 var(--theme-purple-deep), 0 0 1rem rgba(108, 43, 207, 0.58);
+}
+
+.crypto-slide-copy p,
+.vr-project-copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.72rem;
+  line-height: 1.9;
+}
+
+.crypto-carousel .carousel-control-prev,
+.crypto-carousel .carousel-control-next {
+  width: 4rem;
+  opacity: 0.9;
+}
+
+.crypto-carousel .carousel-control-prev-icon,
+.crypto-carousel .carousel-control-next-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(53, 16, 111, 0.78);
+  background-size: 54%;
+  border: 1px solid rgba(245, 201, 90, 0.72);
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(108, 43, 207, 0.42);
+}
+
+.crypto-carousel .carousel-indicators {
+  bottom: 1.25rem;
+  gap: 0.55rem;
+  margin-bottom: 0;
+}
+
+.crypto-carousel .carousel-indicators [data-bs-target] {
+  width: 2.2rem;
+  height: 0.34rem;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.46);
+  border: 0;
+  border-radius: 999px;
+  opacity: 1;
+}
+
+.crypto-carousel .carousel-indicators .active {
+  background-color: var(--theme-gold);
+  box-shadow: 0 0 0.75rem rgba(245, 201, 90, 0.68);
+}
+
+.vr-showcase {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.vr-project {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+.vr-project + .vr-project {
+  border-top: 1px solid rgba(245, 201, 90, 0.28);
+}
+
+.vr-project:nth-child(even) .vr-project-media {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.vr-project:nth-child(even) .vr-project-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.vr-video-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 4px;
+}
+
+.vr-poster-frame img {
+  display: block;
+  width: 100%;
+  max-height: 34rem;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.vr-project-copy {
+  text-align: left;
+}
+
+.vr-project-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* ████████████████████████████████████████████████████████████████████████ */
 /*                              BACKGROUND VIDEO                            */
 /* ████████████████████████████████████████████████████████████████████████ */
 .background-video {
@@ -1567,20 +1849,26 @@ iframe {
 
 @media (max-width: 900px) {
   .stocks-hero .pixel-header-row h1,
-  .frames-hero .pixel-header-row h1 {
+  .frames-hero .pixel-header-row h1,
+  .crypto-hero .pixel-header-row h1,
+  .vr-hero .pixel-header-row h1 {
     font-size: 2.15rem;
   }
 
   .stocks-signal-strip,
-  .frames-signal-strip {
+  .frames-signal-strip,
+  .crypto-signal-strip,
+  .vr-signal-strip {
     width: min(100%, 38rem);
   }
 
-  .stock-slide {
+  .stock-slide,
+  .crypto-slide {
     min-height: 34rem;
   }
 
-  .stock-slide-image {
+  .stock-slide-image,
+  .crypto-slide-image {
     max-height: 27rem;
   }
 
@@ -1596,6 +1884,11 @@ iframe {
     width: min(100%, 25rem);
   }
 
+  .vr-project {
+    grid-template-columns: minmax(0, 1.15fr) minmax(14rem, 0.85fr);
+    gap: 2rem;
+  }
+
   .animation-project,
   .animation-project:nth-child(even) {
     grid-template-columns: minmax(0, 1.45fr) minmax(13rem, 0.7fr);
@@ -1605,52 +1898,68 @@ iframe {
 
 @media (max-width: 700px) {
   .stocks-hero,
-  .frames-hero {
+  .frames-hero,
+  .crypto-hero,
+  .vr-hero {
     min-height: 29rem;
     padding: 7rem 5vw 3.5rem;
   }
 
   .stocks-hero .pixel-header-row h1,
-  .frames-hero .pixel-header-row h1 {
+  .frames-hero .pixel-header-row h1,
+  .crypto-hero .pixel-header-row h1,
+  .vr-hero .pixel-header-row h1 {
     font-size: 1.65rem;
     line-height: 1.55;
   }
 
   .stocks-intro,
-  .frames-intro {
+  .frames-intro,
+  .crypto-intro,
+  .vr-intro {
     font-size: 0.72rem;
   }
 
   .stocks-signal-strip,
-  .frames-signal-strip {
+  .frames-signal-strip,
+  .crypto-signal-strip,
+  .vr-signal-strip {
     grid-template-columns: 1fr;
     max-width: 24rem;
   }
 
   .stocks-signal,
-  .frames-signal {
+  .frames-signal,
+  .crypto-signal,
+  .vr-signal {
     min-height: 0;
   }
 
   .stocks-main,
-  .frames-main {
+  .frames-main,
+  .crypto-main,
+  .vr-main {
     padding: 0 5vw 7rem;
   }
 
-  .stock-slide {
+  .stock-slide,
+  .crypto-slide {
     min-height: 30rem;
     padding-bottom: 4.5rem;
   }
 
-  .stock-slide-image {
+  .stock-slide-image,
+  .crypto-slide-image {
     max-height: 22rem;
   }
 
-  .stock-slide-copy h2 {
+  .stock-slide-copy h2,
+  .crypto-slide-copy h2 {
     font-size: 0.92rem;
   }
 
-  .stock-slide-copy p {
+  .stock-slide-copy p,
+  .crypto-slide-copy p {
     font-size: 0.62rem;
   }
 
@@ -1685,9 +1994,36 @@ iframe {
 
   .stocks-carousel .carousel-control-prev,
   .stocks-carousel .carousel-control-next,
+  .crypto-carousel .carousel-control-prev,
+  .crypto-carousel .carousel-control-next,
   .frames-carousel .carousel-control-prev,
   .frames-carousel .carousel-control-next {
     width: 3rem;
+  }
+
+  .vr-project,
+  .vr-project:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1rem 0.65rem;
+  }
+
+  .vr-project:nth-child(even) .vr-project-media,
+  .vr-project:nth-child(even) .vr-project-copy {
+    grid-row: auto;
+    grid-column: 1;
+  }
+
+  .vr-project-copy {
+    text-align: center;
+  }
+
+  .vr-project-copy h2 {
+    font-size: 0.92rem;
+  }
+
+  .vr-project-copy p {
+    font-size: 0.62rem;
   }
 
   .animations-hero {
@@ -1732,16 +2068,21 @@ iframe {
 
 @media (max-width: 480px) {
   .stocks-hero .pixel-header-row h1,
-  .frames-hero .pixel-header-row h1 {
+  .frames-hero .pixel-header-row h1,
+  .crypto-hero .pixel-header-row h1,
+  .vr-hero .pixel-header-row h1 {
     font-size: 1.25rem;
   }
 
   .stocks-carousel-shell,
-  .frames-carousel-shell {
+  .frames-carousel-shell,
+  .crypto-carousel-shell,
+  .vr-showcase {
     padding: 0.65rem;
   }
 
   .stock-slide,
+  .crypto-slide,
   .frames-slide {
     gap: 0.85rem;
     min-height: 26rem;
@@ -1749,11 +2090,13 @@ iframe {
   }
 
   .stock-slide-label,
+  .crypto-slide-label,
   .frames-slide-label {
     font-size: 0.5rem;
   }
 
-  .stock-slide-image {
+  .stock-slide-image,
+  .crypto-slide-image {
     max-height: 17rem;
   }
 
@@ -1763,6 +2106,8 @@ iframe {
 
   .stocks-carousel .carousel-control-prev-icon,
   .stocks-carousel .carousel-control-next-icon,
+  .crypto-carousel .carousel-control-prev-icon,
+  .crypto-carousel .carousel-control-next-icon,
   .frames-carousel .carousel-control-prev-icon,
   .frames-carousel .carousel-control-next-icon {
     width: 2rem;
@@ -2043,7 +2388,7 @@ iframe {
     background: rgba(0, 0, 0, 0.3);
   }
 
-  .crypto-carousel .carousel-item img {
+  .crypto-carousel .carousel-item > img {
     height: 300px;
   }
 
