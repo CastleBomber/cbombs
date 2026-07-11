@@ -6,8 +6,6 @@ import { LuBrain } from 'react-icons/lu';
 import { SiEthereum } from 'react-icons/si';
 import { GiFilmStrip, GiVrHeadset } from 'react-icons/gi';
 import {
-  ChevronDown,
-  ChevronRight,
   House,
   Mail,
   Menu,
@@ -16,17 +14,13 @@ import profileImg from '../images/header/r13-cbombs.png';
 
 const mainLinks = [
   { to: '/', label: 'Home', icon: House },
+  { to: '/ai', label: 'AI', icon: LuBrain },
   { to: '/crypto', label: 'Crypto', icon: SiEthereum },
   { to: '/vrpage', label: 'VR', icon: GiVrHeadset },
   { to: '/animations', label: 'Animations', icon: GiFilmStrip },
 ];
 
 const contactLink = { to: '/contact', label: 'Contact', icon: Mail };
-
-const aiLinks = [
-  { to: '/ai/stocksaipage', label: 'Stocks AI' },
-  { to: '/ai/framesaipage', label: 'Frames AI' },
-];
 
 const socialLinks = [
   { href: 'https://github.com/CastleBomber', icon: <FaGithub aria-hidden="true" />, label: 'GitHub' },
@@ -37,9 +31,6 @@ const socialLinks = [
 const NavBar = () => {
   const { pathname } = useLocation();
   const [show, setShow] = useState(false);
-  const [showAIProjects, setShowAIProjects] = useState(
-    pathname.startsWith('/ai/'),
-  );
 
   const closeMenu = () => setShow(false);
 
@@ -94,53 +85,15 @@ const NavBar = () => {
                 </Nav.Link>
               </li>
 
-              <li className="drawer-item" style={{ '--item-index': 1 }}>
-                <button
-                  type="button"
-                  className={`drawer-link drawer-expand ${pathname.startsWith('/ai/') ? 'is-active' : ''}`}
-                  aria-expanded={showAIProjects}
-                  aria-controls="ai-project-links"
-                  onClick={() => setShowAIProjects((current) => !current)}
-                >
-                  <span className="drawer-expand-label">
-                    {showAIProjects ? (
-                      <ChevronDown aria-hidden="true" size={17} />
-                    ) : (
-                      <ChevronRight aria-hidden="true" size={17} />
-                    )}
-                    AI
-                  </span>
-                  <LuBrain aria-hidden="true" size={22} />
-                </button>
-
-                {showAIProjects && (
-                  <ul id="ai-project-links" className="drawer-submenu">
-                    {aiLinks.map((link) => (
-                      <li key={link.to}>
-                        <Nav.Link
-                          as={Link}
-                          to={link.to}
-                          onClick={closeMenu}
-                          aria-current={pathname === link.to ? 'page' : undefined}
-                          className={`drawer-sublink ${pathname === link.to ? 'is-active' : ''}`}
-                        >
-                          {link.label}
-                        </Nav.Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-
               {mainLinks.slice(1).map((link, index) => {
                 const Icon = link.icon;
-                const active = pathname === link.to;
+                const active = link.to === '/ai' ? pathname.startsWith('/ai') : pathname === link.to;
 
                 return (
                   <li
                     key={link.to}
                     className="drawer-item"
-                    style={{ '--item-index': index + 2 }}
+                    style={{ '--item-index': index + 1 }}
                   >
                     <Nav.Link
                       as={Link}
