@@ -4,10 +4,22 @@ import capstone1 from "../images/capstone-page/capstone-poster.jpg";
 import Footer from '../components/Footer';
 import HeaderDivider from '../components/HeaderDivider';
 
-const vrStats = [
-    { value: "VR", label: "immersive worlds" },
-    { value: "Music", label: "festival concept" },
-    { value: "Fantasy", label: "spiritual flight" },
+const vrProjects = [
+    {
+        title: 'Angels and Dragons',
+        label: 'VR music festival',
+        description: 'A VR music festival concept hoping to inspire good and light through an angelic fantasy world.',
+        type: 'video',
+        embedUrl: 'https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi',
+    },
+    {
+        title: "Heaven's Gate",
+        label: 'Spiritual fantasy experience',
+        description: 'A VR fantasy experience about the feeling of flying upward into luminous gates and celestial space.',
+        type: 'poster',
+        image: capstone1,
+        imageAlt: "Heaven's Gate capstone poster",
+    },
 ];
 
 export default function VRPage() {
@@ -21,55 +33,39 @@ export default function VRPage() {
                 </div>
                 <HeaderDivider />
                 <p className="vr-intro">
-                    Immersive fantasy spaces, music-driven worlds, and emotional VR concepts built around light and flight
+                    Immersive fantasy spaces built around light, flight, and music
                 </p>
-                <div className="vr-signal-strip" aria-label="VR project highlights">
-                    {vrStats.map((stat) => (
-                        <div className="vr-signal" key={stat.label}>
-                            <span>{stat.value}</span>
-                            <p>{stat.label}</p>
-                        </div>
-                    ))}
-                </div>
             </header>
 
-            <main className="vr-main">
-                <section className="vr-showcase" aria-label="VR project showcase">
-                    <article className="vr-project">
+            <main className="vr-gallery">
+                {vrProjects.map((project) => (
+                    <article className="vr-project" key={project.title}>
                         <div className="vr-project-media">
-                            <div className="vr-video-frame">
-                                <iframe
-                                    width="560"
-                                    height="315"
-                                    src="https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi"
-                                    title="Angels and Dragons VR music festival video"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerPolicy="strict-origin-when-cross-origin"
-                                    allowFullScreen>
-                                </iframe>
-                            </div>
+                            {project.type === 'video' ? (
+                                <div className="vr-video-frame">
+                                    <iframe
+                                        src={project.embedUrl}
+                                        title={`${project.title} VR project video`}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    />
+                                </div>
+                            ) : (
+                                <div className="vr-poster-frame">
+                                    <img src={project.image} alt={project.imageAlt} />
+                                </div>
+                            )}
                         </div>
-                        <div className="vr-project-copy">
-                            <p className="vr-project-label">VR music festival</p>
-                            <h2>[Angels and Dragons]</h2>
-                            <p>VR music festival concept hoping to inspire good and light through an angelic fantasy world.</p>
-                        </div>
-                    </article>
 
-                    <article className="vr-project">
-                        <div className="vr-project-media">
-                            <div className="vr-poster-frame">
-                                <img src={capstone1} alt="Heaven's Gate capstone poster" />
-                            </div>
-                        </div>
                         <div className="vr-project-copy">
-                            <p className="vr-project-label">Spiritual fantasy experience</p>
-                            <h2>[Heaven's Gate]</h2>
-                            <p>VR fantasy experience about the feeling of flying upward into luminous gates and celestial space.</p>
+                            <p className="vr-project-label">{project.label}</p>
+                            <h2>{project.title}</h2>
+                            <p className="vr-project-description">{project.description}</p>
                         </div>
                     </article>
-                </section>
+                ))}
             </main>
 
             <Footer />

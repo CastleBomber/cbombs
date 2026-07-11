@@ -1587,6 +1587,154 @@ article {
   margin-bottom: 1rem;
 }
 
+.vr-page {
+  --vr-line: rgba(245, 201, 90, 0.62);
+}
+
+.vr-hero {
+  min-height: 34rem;
+  padding: 8rem 6vw 5rem;
+}
+
+.vr-hero::before {
+  top: 10%;
+  width: 42rem;
+  max-width: 90vw;
+  height: 24rem;
+  background: radial-gradient(ellipse, rgba(108, 43, 207, 0.42) 0%, rgba(53, 16, 111, 0.16) 46%, transparent 72%);
+  filter: blur(12px);
+}
+
+.vr-hero .pixel-header-row {
+  max-width: 70rem;
+}
+
+.vr-hero .pixel-header-row h1 {
+  font-size: 2.5rem;
+}
+
+.vr-page .pixel-angel {
+  filter: drop-shadow(0 0 0.75rem rgba(255, 255, 255, 0.78));
+}
+
+.vr-page .pixel-dragon {
+  filter: drop-shadow(0 0 1.2rem rgba(245, 201, 90, 0.34));
+}
+
+.vr-page .vr-intro {
+  max-width: 37rem;
+  margin: 1.6rem auto 2.5rem;
+  font-size: 1.08rem;
+}
+
+.vr-gallery {
+  width: min(100%, 82rem);
+  margin: 0 auto;
+  padding: 0 6vw 10rem;
+}
+
+.vr-project {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(16rem, 0.75fr);
+  gap: 4.5rem;
+  align-items: center;
+  padding: 5.5rem 0;
+}
+
+.vr-project + .vr-project {
+  border-top: 0;
+}
+
+.vr-project:nth-child(even) {
+  grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.65fr);
+}
+
+.vr-project:nth-child(even) .vr-project-media {
+  grid-column: 2;
+}
+
+.vr-project:nth-child(even) .vr-project-copy {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.vr-project-media {
+  position: relative;
+}
+
+.vr-video-frame,
+.vr-poster-frame {
+  position: relative;
+  padding: 0.65rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(108, 43, 207, 0.34));
+  border: 1px solid var(--vr-line);
+  border-radius: 8px;
+  box-shadow: 0 2rem 5rem rgba(20, 6, 48, 0.66), 0 0 2rem rgba(108, 43, 207, 0.24);
+}
+
+.vr-video-frame::after,
+.vr-poster-frame::after {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  content: "";
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.vr-video-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.vr-poster-frame img {
+  display: block;
+  width: 100%;
+  max-height: 34rem;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.vr-project-copy {
+  position: relative;
+  padding: 2.25rem 0;
+  text-align: left;
+}
+
+.vr-page .vr-project-label {
+  margin: 0 0 1rem;
+  color: var(--theme-gold);
+  font-family: Arial, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.vr-page .vr-project-copy h2 {
+  margin: 0 0 1.1rem;
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1.15;
+  text-align: left;
+  text-shadow: 0 2px 0 var(--theme-purple-deep), 0 0 1.5rem rgba(108, 43, 207, 0.58);
+}
+
+.vr-page .vr-project-description {
+  max-width: 24rem;
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                              BACKGROUND VIDEO                            */
 /* ████████████████████████████████████████████████████████████████████████ */
@@ -1885,8 +2033,8 @@ iframe {
   }
 
   .vr-project {
-    grid-template-columns: minmax(0, 1.15fr) minmax(14rem, 0.85fr);
-    gap: 2rem;
+    grid-template-columns: minmax(0, 1.45fr) minmax(13rem, 0.7fr);
+    gap: 2.5rem;
   }
 
   .animation-project,
@@ -1940,6 +2088,10 @@ iframe {
   .crypto-main,
   .vr-main {
     padding: 0 5vw 7rem;
+  }
+
+  .vr-gallery {
+    padding: 0 7vw 7rem;
   }
 
   .stock-slide,
@@ -2005,7 +2157,7 @@ iframe {
   .vr-project:nth-child(even) {
     grid-template-columns: 1fr;
     gap: 1.25rem;
-    padding: 1rem 0.65rem;
+    padding: 4rem 0;
   }
 
   .vr-project:nth-child(even) .vr-project-media,
@@ -2015,14 +2167,15 @@ iframe {
   }
 
   .vr-project-copy {
-    text-align: center;
+    padding: 1.5rem 0 1rem;
+    text-align: left;
   }
 
-  .vr-project-copy h2 {
+  .vr-page .vr-project-copy h2 {
     font-size: 0.92rem;
   }
 
-  .vr-project-copy p {
+  .vr-page .vr-project-description {
     font-size: 0.62rem;
   }
 
@@ -2079,6 +2232,14 @@ iframe {
   .crypto-carousel-shell,
   .vr-showcase {
     padding: 0.65rem;
+  }
+
+  .vr-gallery {
+    padding-inline: 7vw;
+  }
+
+  .vr-page .vr-project-copy h2 {
+    font-size: 1.8rem;
   }
 
   .stock-slide,
