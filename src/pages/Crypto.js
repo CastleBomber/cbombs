@@ -11,7 +11,7 @@ const slides = [
     {
         img: crypto1,
         alt: "Web3 crypto app home screen",
-        label: "Wallet flow",
+        label: "Crypto Wallet",
         title: "[Home Page]",
         text: "A Web3 transaction app for sending crypto, connecting wallet state, and logging activity.",
     },
@@ -34,7 +34,7 @@ const slides = [
 const cryptoStats = [
     { value: "Web3", label: "wallet experience" },
     { value: "MERN", label: "full-stack app" },
-    { value: "DB", label: "transaction logs" },
+    { value: "MongoDB", label: "Full-stack crypto wallet" },
 ];
 
 export default function Crypto() {
