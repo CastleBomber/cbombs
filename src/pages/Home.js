@@ -64,16 +64,16 @@ export default function Home() {
             <section className="scroll-section">
                 <main>
                     {/* Video */}
-                    <div className="video-container">
+                    <div className="video-container home-video-frame">
                         <iframe
                             width="560"
                             height="315"
                             src="https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi"
                             title="YouTube"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen>
                         </iframe>
                     </div>
                     <h2>Angels and Dragons</h2>

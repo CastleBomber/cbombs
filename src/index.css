@@ -2020,6 +2020,34 @@ article {
   max-width: 800px;
 }
 
+.video-container.home-video-frame {
+  position: relative;
+  padding: 0.65rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(108, 43, 207, 0.34));
+  border: 1px solid rgba(245, 201, 90, 0.62);
+  border-radius: 8px;
+  box-shadow: 0 2rem 5rem rgba(20, 6, 48, 0.66), 0 0 2rem rgba(108, 43, 207, 0.24);
+}
+
+.video-container.home-video-frame::after {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  content: "";
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.video-container.home-video-frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
 iframe {
   width: 100%;
   aspect-ratio: 16/9;

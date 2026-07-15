@@ -8,14 +8,14 @@ const vrProjects = [
     {
         title: 'Angels and Dragons',
         label: 'VR Music Festival',
-        description: 'A VR Music Festival hoping to inspire good and light into the world.',
+        description: "A VR Music Festival featuring a hunt for the dragon's egg quest",
         type: 'video',
         embedUrl: 'https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi',
     },
     {
         title: "Heaven's Gate",
-        label: 'Capstone Project',
-        description: 'A VR fantasy experience of climbing the stairs to heaven.',
+        label: 'VR Game',
+        description: 'Stairway to Heaven.',
         type: 'poster',
         image: capstone1,
         imageAlt: "Heaven's Gate capstone poster",
