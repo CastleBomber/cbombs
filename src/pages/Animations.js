@@ -24,7 +24,7 @@ export default function Animations() {
             <header className="animations-hero">
                 <div className="pixel-header-row">
                     <img src={pixelAngel} alt="" className="pixel-angel" aria-hidden="true" />
-                    <h1>Animation Projects</h1>
+                    <h1>Animations</h1>
                     <img src={pixelDragon} alt="" className="pixel-dragon" aria-hidden="true" />
                 </div>
                 <HeaderDivider />
@@ -50,8 +50,8 @@ export default function Animations() {
                         </div>
 
                         <div className="animation-project-copy">
-                            <p className="animation-project-label">{project.label}</p>
                             <h2>{project.title}</h2>
+                            <p className="animation-project-label">{project.label}</p>
                             <p className="animation-project-description">{project.description}</p>
                         </div>
                     </article>
