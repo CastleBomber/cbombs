@@ -2685,6 +2685,26 @@ iframe {
   margin: 1.5rem 0;
 }
 
+.scroll-section h2.home-project-title {
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1.15;
+  text-shadow: 0 2px 0 var(--theme-purple-deep), 0 0 1.5rem rgba(108, 43, 207, 0.58);
+}
+
+.web-page .home-project-label {
+  color: var(--theme-gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+}
+
+.web-page .home-project-description {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
 /* ████████████████████████████████████████████████████████████████████████ */
 /*                                HERO                                      */
 /* ████████████████████████████████████████████████████████████████████████ */
@@ -2717,11 +2737,15 @@ iframe {
 }
 
 .home-hero .pixel-angel {
-  animation: homeHeroAngelIn 1800ms ease-out 1960ms forwards;
+  animation:
+    homeHeroAngelIn 1800ms ease-out 1960ms forwards,
+    homeHeroCompanionOut 2400ms ease-in 6760ms forwards;
 }
 
 .home-hero .pixel-dragon {
-  animation: homeHeroDragonIn 1800ms ease-out 2120ms forwards;
+  animation:
+    homeHeroDragonIn 1800ms ease-out 2120ms forwards,
+    homeHeroCompanionOut 2400ms ease-in 6920ms forwards;
 }
 
 .home-hero-divider .header-gold-divider-line {
@@ -2788,6 +2812,11 @@ iframe {
     opacity: 1;
     transform: translateX(50%) scaleX(-1) translateY(0);
   }
+}
+
+@keyframes homeHeroCompanionOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 @keyframes homeHeroLineReveal {
@@ -2984,7 +3013,7 @@ iframe {
 
   .home-hero .pixel-angel,
   .home-hero .pixel-dragon {
-    animation-name: homeHeroMobilePixelIn;
+    animation-name: homeHeroMobilePixelIn, homeHeroCompanionOut;
   }
 
   .pixel-angel {

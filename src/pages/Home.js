@@ -76,11 +76,11 @@ export default function Home() {
                             allowFullScreen>
                         </iframe>
                     </div>
-                    <h2>Angels and Dragons</h2>
+                    <h2 className="home-project-title">Angels and Dragons</h2>
                     <p>
-                        VR Music Festival
+                        <span className="home-project-label">VR Music Festival</span>
                         <br />
-                        hoping to inspire good and light into the world
+                        <span className="home-project-description">hoping to inspire good and light into the world</span>
                     </p>
                 </main>
             </section>

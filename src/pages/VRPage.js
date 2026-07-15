@@ -15,7 +15,7 @@ const vrProjects = [
     {
         title: "Heaven's Gate",
         label: 'VR Game',
-        description: 'Stairway to Heaven.',
+        description: 'Stairway to Heaven',
         type: 'poster',
         image: capstone1,
         imageAlt: "Heaven's Gate capstone poster",
