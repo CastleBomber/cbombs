@@ -9,7 +9,6 @@ const vrProjects = [
         title: 'Angels and Dragons',
         label: 'VR Music Festival',
         description: 'A VR Music Festival hoping to inspire good and light into the world.',
-        emphasizeDescription: true,
         type: 'video',
         embedUrl: 'https://www.youtube.com/embed/skoAmfKflfQ?si=dJPrcA7NXFgXCvBi',
     },
@@ -62,12 +61,8 @@ export default function VRPage() {
 
                         <div className="vr-project-copy">
                             <h2>{project.title}</h2>
-                            <p className={`vr-project-label${project.emphasizeDescription ? ' vr-project-label--plain' : ''}`}>
-                                {project.label}
-                            </p>
-                            <p className={`vr-project-description${project.emphasizeDescription ? ' vr-project-description--featured' : ''}`}>
-                                {project.description}
-                            </p>
+                            <p className="vr-project-label">{project.label}</p>
+                            <p className="vr-project-description">{project.description}</p>
                         </div>
                     </article>
                 ))}
