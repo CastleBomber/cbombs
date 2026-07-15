@@ -1718,6 +1718,13 @@ article {
   text-transform: none;
 }
 
+.vr-page .vr-project-label--plain {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
 .vr-page .vr-project-copy h2 {
   margin: 0 0 0.95rem;
   color: #fff;
@@ -1733,6 +1740,14 @@ article {
   font-size: 1rem;
   line-height: 1.7;
   text-align: left;
+}
+
+.vr-page .vr-project-description--featured {
+  padding: 1rem 1.1rem;
+  background: rgba(20, 6, 48, 0.5);
+  border: 1px solid rgba(245, 201, 90, 0.48);
+  border-radius: 8px;
+  box-shadow: 0 1.25rem 3rem rgba(20, 6, 48, 0.48);
 }
 
 /* ████████████████████████████████████████████████████████████████████████ */
