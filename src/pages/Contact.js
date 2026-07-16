@@ -32,22 +32,11 @@ export default function Contact() {
                                 className="contact-form"
                                 action="https://formsubmit.co/cbombs@cbombs.com"
                                 method="POST"
+                                noValidate
                             >
                                 <input type="hidden" name="_subject" value="New cbombs.com portfolio message" />
                                 <input type="hidden" name="_template" value="table" />
                                 <input type="hidden" name="_next" value="https://www.cbombs.com/contact?message=sent#contact" />
-
-                                <div className="contact-field">
-                                    <label className="visually-hidden" htmlFor="contact-company">Company website</label>
-                                    <input
-                                        id="contact-company"
-                                        type="url"
-                                        name="companyWebsite"
-                                        placeholder="Company website"
-                                        autoComplete="url"
-                                        maxLength="240"
-                                    />
-                                </div>
 
                                 <div className="contact-honeypot" aria-hidden="true">
                                     <label htmlFor="contact-website-check">Leave this blank</label>
@@ -68,8 +57,6 @@ export default function Contact() {
                                         name="name"
                                         placeholder="Name"
                                         autoComplete="name"
-                                        maxLength="80"
-                                        required
                                     />
                                 </div>
 
@@ -77,12 +64,10 @@ export default function Contact() {
                                     <label className="visually-hidden" htmlFor="contact-email">Email</label>
                                     <input
                                         id="contact-email"
-                                        type="email"
+                                        type="text"
                                         name="email"
                                         placeholder="Email"
                                         autoComplete="email"
-                                        maxLength="160"
-                                        required
                                     />
                                 </div>
 
@@ -93,8 +78,6 @@ export default function Contact() {
                                         name="message"
                                         placeholder="Message"
                                         rows="1"
-                                        maxLength="2000"
-                                        required
                                     />
                                 </div>
 

@@ -63,7 +63,9 @@ const NavBar = () => {
 
         <Offcanvas.Body>
           <div className="drawer-brand">
-            <img src={profileImg} alt="" className="drawer-profile" />
+            <div className="drawer-profile-frame">
+              <img src={profileImg} alt="" className="drawer-profile" />
+            </div>
             <div>
               <p className="drawer-heading">CastleBomber Studios</p>
               <p className="drawer-quote">"Software for all"</p>

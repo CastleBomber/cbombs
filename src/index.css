@@ -212,13 +212,22 @@ article {
   border-bottom: 1px solid rgba(255, 255, 255, 0.58);
 }
 
-.drawer-profile {
-  width: 3.5rem;
-  height: 3.5rem;
-  object-fit: cover;
-  border: 1px solid var(--theme-gold);
+.drawer-profile-frame {
+  flex: 0 0 3.35rem;
+  width: 3.35rem;
+  height: 3.35rem;
+  overflow: hidden;
+  border: 2px solid var(--theme-gold);
   border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(108, 43, 207, 0.28), 0 0 1.35rem rgba(245, 201, 90, 0.3);
+  box-shadow: 0 0 0 3px rgba(108, 43, 207, 0.28), 0 0 1.1rem rgba(245, 201, 90, 0.26);
+}
+
+.drawer-profile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+  object-fit: cover;
 }
 
 .drawer-eyebrow,
@@ -238,18 +247,18 @@ article {
 
 .drawer-heading {
   color: var(--theme-white);
-  font-size: 1.28rem;
-  line-height: 1.05;
+  font-size: 1.05rem;
+  line-height: 1.15;
 }
 
 .drawer-quote {
   margin-top: 0.45rem;
   color: var(--theme-gold);
   font-family: Georgia, serif;
-  font-size: 0.98rem;
+  font-size: 0.68rem;
   font-style: italic;
-  font-weight: 700;
-  line-height: 1.15;
+  font-weight: 500;
+  line-height: 1.3;
   text-shadow: 0 1px 0 var(--theme-purple-deep), 0 0 1rem rgba(245, 201, 90, 0.48);
 }
 
