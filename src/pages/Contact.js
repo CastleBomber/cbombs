@@ -17,6 +17,7 @@ export default function Contact() {
                     <div className="footer-content contact-page-content">
                         <div className="footer-column footer-left" id="contact">
                             <h3 id="contact-title">Connect</h3>
+                            <HeaderDivider className="contact-panel-divider" />
                             <p className="contact-intro">
                                 If you'd like to collaborate on projects,<br />
                                 feel free to send a message.
